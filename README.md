@@ -16,6 +16,7 @@
 - Ggf. in der `/config/cors.php` die URL des Frontends anpassen.
 - Über `php artisan serve` Backend starten
 - Hinweis: `npm install` muss nicht ausgeführt werden.
+- Hinweis für Prod Deployment: in der .env müssen `SANCTUM_STATEFUL_DOMAINS` und `SESSION_DOMAIN` auf die Domain des Frontends zeigen. (ohne http und www)
 
 ## About Laravel
 
