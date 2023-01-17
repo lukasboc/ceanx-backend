@@ -13,6 +13,7 @@
 - Dependencies mit `composer install` installieren
 - Mittels `php artisan key:generate` einen APP_KEY erstellen.
 - DB Migrationen mit `php artisan migrate` durchführen
+- Ggf. in der `/config/cors.php` die URL des Frontends anpassen.
 - Über `php artisan serve` Backend starten
 - Hinweis: `npm install` muss nicht ausgeführt werden.
 

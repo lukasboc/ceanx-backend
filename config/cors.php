@@ -27,10 +27,6 @@ return [
         'user/profile-information',
         'email/verification-notification',
         'user',
-        'project/v1/projects',
-        'project/v1/project_by_code',
-        'project/v1/fix_entries_by_project_id',
-        'project/v1/time_entries_by_project_id',
         'cost_estimations/all',
         'cost_estimation_positions',
         'cost_estimation_positions/new'
@@ -38,7 +34,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:3000', 'https://dev.simpleworklog.de'],
+    'allowed_origins' => ['http://localhost:3000', 'https://ceanx.lubomedia.de'],
 
     'allowed_origins_patterns' => [],
 
