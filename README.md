@@ -11,6 +11,7 @@
 
 - .env aus .env.example erstellen
 - Dependencies mit `composer install` installieren
+- Mittels `php artisan key:generate` einen APP_KEY erstellen.
 - DB Migrationen mit `php artisan migrate` durchführen
 - Über `php artisan serve` Backend starten
 - Hinweis: `npm install` muss nicht ausgeführt werden.
