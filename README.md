@@ -7,12 +7,13 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Projekt Setup
+## Projekt Setup Lokal
 
+- .env aus .env.example erstellen
 - Dependencies mit `composer install` installieren
-- .evv anpssen
-- über `php artisan serve` Backend starten
-- Hinweis: `npm install` muss nicht ausgeführt werden, da kei
+- DB Migrationen mit `php artisan migrate` durchführen
+- Über `php artisan serve` Backend starten
+- Hinweis: `npm install` muss nicht ausgeführt werden.
 
 ## About Laravel
 
