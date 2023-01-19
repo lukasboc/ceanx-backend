@@ -72,6 +72,7 @@ class CostEstimationController extends Controller
         $costEstimation = CostEstimation::find($inputs['cost_estimation_id']);
 
         $clone = $costEstimation->replicate();
+        $clone->title = $clone->title . ' (Kopie)';
         $clone->user()->associate($user);
 
         $clone->save();
