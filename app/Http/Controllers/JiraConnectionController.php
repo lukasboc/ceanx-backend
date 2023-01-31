@@ -25,7 +25,7 @@ class JiraConnectionController extends Controller
         $user = User::find($request->user()->id);
         $user->jiraConnections()->save($jc);
 
-        return $jc;
+        return $jc->makeHidden('api_token');
     }
 
     public function testJiraConnection(Request $request)
@@ -47,12 +47,12 @@ class JiraConnectionController extends Controller
 
     public function getJiraConnections(Request $request)
     {
-        return JiraConnection::orderByDesc('updated_at')->get();
+        return JiraConnection::orderByDesc('updated_at')->get()->makeHidden('api_token');
     }
 
     public function getJiraConnectionById($id): \Illuminate\Http\JsonResponse
     {
-        return response()->json(JiraConnection::with('user:id,name')->find($id));
+        return response()->json(JiraConnection::with('user:id,name')->find($id)->makeHidden('api_token'));
     }
 
     public function getSearchResult(Request $request)

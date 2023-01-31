@@ -24,7 +24,7 @@ class TroiConnectionController extends Controller
         $user = User::find($request->user()->id);
         $user->troiConnections()->save($tc);
 
-        return $tc;
+        return $tc->makeHidden('password');
     }
 
     public function testTroiConnection(Request $request)
@@ -44,12 +44,12 @@ class TroiConnectionController extends Controller
 
     public function getTroiConnections(Request $request)
     {
-        return TroiConnection::orderByDesc('updated_at')->get();
+        return TroiConnection::orderByDesc('updated_at')->get()->makeHidden('password');
     }
 
     public function getTroiConnectionById($id): \Illuminate\Http\JsonResponse
     {
-        return response()->json(TroiConnection::with('user:id,name')->find($id));
+        return response()->json(TroiConnection::with('user:id,name')->find($id)->makeHidden('password'));
     }
 
     public function getSearchResult(Request $request)
