@@ -270,8 +270,7 @@ INTRO
     'example_languages' => [
         'bash',
         'javascript',
-        'php',
-        'javascript'
+        'php'
     ],
 
     /*

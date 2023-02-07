@@ -24,7 +24,6 @@
                     body .content .bash-example code { display: none; }
                     body .content .javascript-example code { display: none; }
                     body .content .php-example code { display: none; }
-                    body .content .javascript-example code { display: none; }
             </style>
 
 
@@ -32,7 +31,7 @@
 
 </head>
 
-<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;,&quot;php&quot;,&quot;javascript&quot;]">
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;,&quot;php&quot;]">
 
 <a href="#" id="nav-button">
     <span>
@@ -46,7 +45,6 @@
                                             <button type="button" class="lang-button" data-language-name="bash">bash</button>
                                             <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
                                             <button type="button" class="lang-button" data-language-name="php">php</button>
-                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
                     </div>
     
     <div class="search">
@@ -295,7 +293,7 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>To authenticate requests, include a <strong><code>X-CSRF-TOKEN</code></strong> header with the value <strong><code>"{TOKEN}"</code></strong>.</p>
+<p>Authenticate requests to this API's endpoints by sending a <strong><code>X-CSRF-TOKEN</code></strong> header with the value <strong><code>"{TOKEN}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>This API can <b>only</b> be used from the CeanX SPA.</p>
 
@@ -354,23 +352,6 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/components/all"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -472,7 +453,7 @@ vary: Origin
     --header "Accept: application/json" \
     --data "{
     \"Component\": {
-        \"title\": \"eos\"
+        \"title\": \"voluptatem\"
     }
 }"
 </code></pre></div>
@@ -491,7 +472,7 @@ const headers = {
 
 let body = {
     "Component": {
-        "title": "eos"
+        "title": "voluptatem"
     }
 };
 
@@ -514,37 +495,13 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'Component' =&gt; [
-                'title' =&gt; 'eos',
+                'title' =&gt; 'voluptatem',
             ],
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/components/new"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "Component": {
-        "title": "eos"
-    }
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -624,10 +581,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="Component.title"                data-endpoint="POSTapi-components-new"
-               value="eos"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>Title Example: <code>eos</code></p>
+<p>Title Example: <code>voluptatem</code></p>
                     </div>
                                     </details>
         </div>
@@ -684,23 +641,6 @@ $response = $client-&gt;delete(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/components/1"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -834,23 +774,6 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimations/all"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-GETapi-cost_estimations-all">
@@ -983,23 +906,6 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimations/latest"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-GETapi-cost_estimations-latest">
@@ -1100,10 +1006,10 @@ vary: Origin
     --header "Accept: application/json" \
     --data "{
     \"costEstimation\": {
-        \"title\": \"nostrum\",
-        \"description\": \"Reprehenderit laborum itaque quod quam cumque.\",
-        \"unit\": \"aut\",
-        \"unit_rate\": \"odio\"
+        \"title\": \"neque\",
+        \"description\": \"Odio aut doloribus aliquid beatae enim fugit iste.\",
+        \"unit\": \"assumenda\",
+        \"unit_rate\": \"blanditiis\"
     }
 }"
 </code></pre></div>
@@ -1122,10 +1028,10 @@ const headers = {
 
 let body = {
     "costEstimation": {
-        "title": "nostrum",
-        "description": "Reprehenderit laborum itaque quod quam cumque.",
-        "unit": "aut",
-        "unit_rate": "odio"
+        "title": "neque",
+        "description": "Odio aut doloribus aliquid beatae enim fugit iste.",
+        "unit": "assumenda",
+        "unit_rate": "blanditiis"
     }
 };
 
@@ -1148,43 +1054,16 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'costEstimation' =&gt; [
-                'title' =&gt; 'nostrum',
-                'description' =&gt; 'Reprehenderit laborum itaque quod quam cumque.',
-                'unit' =&gt; 'aut',
-                'unit_rate' =&gt; 'odio',
+                'title' =&gt; 'neque',
+                'description' =&gt; 'Odio aut doloribus aliquid beatae enim fugit iste.',
+                'unit' =&gt; 'assumenda',
+                'unit_rate' =&gt; 'blanditiis',
             ],
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimations/new"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "costEstimation": {
-        "title": "nostrum",
-        "description": "Reprehenderit laborum itaque quod quam cumque.",
-        "unit": "aut",
-        "unit_rate": "odio"
-    }
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -1264,10 +1143,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="costEstimation.title"                data-endpoint="POSTapi-cost_estimations-new"
-               value="nostrum"
+               value="neque"
                data-component="body">
     <br>
-<p>Title Example: <code>nostrum</code></p>
+<p>Title Example: <code>neque</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1275,10 +1154,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="costEstimation.description"                data-endpoint="POSTapi-cost_estimations-new"
-               value="Reprehenderit laborum itaque quod quam cumque."
+               value="Odio aut doloribus aliquid beatae enim fugit iste."
                data-component="body">
     <br>
-<p>Example: <code>Reprehenderit laborum itaque quod quam cumque.</code></p>
+<p>Example: <code>Odio aut doloribus aliquid beatae enim fugit iste.</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
@@ -1286,10 +1165,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="costEstimation.unit"                data-endpoint="POSTapi-cost_estimations-new"
-               value="aut"
+               value="assumenda"
                data-component="body">
     <br>
-<p>Unit Example: <code>aut</code></p>
+<p>Unit Example: <code>assumenda</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>unit_rate</code></b>&nbsp;&nbsp;
@@ -1297,10 +1176,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="costEstimation.unit_rate"                data-endpoint="POSTapi-cost_estimations-new"
-               value="odio"
+               value="blanditiis"
                data-component="body">
     <br>
-<p>Unit Rate Example: <code>odio</code></p>
+<p>Unit Rate Example: <code>blanditiis</code></p>
                     </div>
                                     </details>
         </div>
@@ -1326,11 +1205,11 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"costEstimation\": {
-        \"id\": \"eius\",
-        \"title\": \"quis\",
-        \"description\": \"Totam temporibus minus quam accusantium.\",
-        \"unit\": \"deleniti\",
-        \"unit_rate\": \"adipisci\"
+        \"id\": \"consequatur\",
+        \"title\": \"dicta\",
+        \"description\": \"Nihil labore similique reiciendis ea.\",
+        \"unit\": \"eligendi\",
+        \"unit_rate\": \"quia\"
     }
 }"
 </code></pre></div>
@@ -1349,11 +1228,11 @@ const headers = {
 
 let body = {
     "costEstimation": {
-        "id": "eius",
-        "title": "quis",
-        "description": "Totam temporibus minus quam accusantium.",
-        "unit": "deleniti",
-        "unit_rate": "adipisci"
+        "id": "consequatur",
+        "title": "dicta",
+        "description": "Nihil labore similique reiciendis ea.",
+        "unit": "eligendi",
+        "unit_rate": "quia"
     }
 };
 
@@ -1376,45 +1255,17 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'costEstimation' =&gt; [
-                'id' =&gt; 'eius',
-                'title' =&gt; 'quis',
-                'description' =&gt; 'Totam temporibus minus quam accusantium.',
-                'unit' =&gt; 'deleniti',
-                'unit_rate' =&gt; 'adipisci',
+                'id' =&gt; 'consequatur',
+                'title' =&gt; 'dicta',
+                'description' =&gt; 'Nihil labore similique reiciendis ea.',
+                'unit' =&gt; 'eligendi',
+                'unit_rate' =&gt; 'quia',
             ],
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimations/edit"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "costEstimation": {
-        "id": "eius",
-        "title": "quis",
-        "description": "Totam temporibus minus quam accusantium.",
-        "unit": "deleniti",
-        "unit_rate": "adipisci"
-    }
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -1494,10 +1345,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="costEstimation.id"                data-endpoint="POSTapi-cost_estimations-edit"
-               value="eius"
+               value="consequatur"
                data-component="body">
     <br>
-<p>ID Example: <code>eius</code></p>
+<p>ID Example: <code>consequatur</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
@@ -1505,10 +1356,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="costEstimation.title"                data-endpoint="POSTapi-cost_estimations-edit"
-               value="quis"
+               value="dicta"
                data-component="body">
     <br>
-<p>Title Example: <code>quis</code></p>
+<p>Title Example: <code>dicta</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1516,10 +1367,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="costEstimation.description"                data-endpoint="POSTapi-cost_estimations-edit"
-               value="Totam temporibus minus quam accusantium."
+               value="Nihil labore similique reiciendis ea."
                data-component="body">
     <br>
-<p>Example: <code>Totam temporibus minus quam accusantium.</code></p>
+<p>Example: <code>Nihil labore similique reiciendis ea.</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
@@ -1527,10 +1378,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="costEstimation.unit"                data-endpoint="POSTapi-cost_estimations-edit"
-               value="deleniti"
+               value="eligendi"
                data-component="body">
     <br>
-<p>Unit Example: <code>deleniti</code></p>
+<p>Unit Example: <code>eligendi</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>unit_rate</code></b>&nbsp;&nbsp;
@@ -1538,10 +1389,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="costEstimation.unit_rate"                data-endpoint="POSTapi-cost_estimations-edit"
-               value="adipisci"
+               value="quia"
                data-component="body">
     <br>
-<p>Unit Rate Example: <code>adipisci</code></p>
+<p>Unit Rate Example: <code>quia</code></p>
                     </div>
                                     </details>
         </div>
@@ -1567,7 +1418,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"costEstimation\": {
-        \"cost_estimation_id\": \"aliquid\"
+        \"cost_estimation_id\": \"neque\"
     }
 }"
 </code></pre></div>
@@ -1586,7 +1437,7 @@ const headers = {
 
 let body = {
     "costEstimation": {
-        "cost_estimation_id": "aliquid"
+        "cost_estimation_id": "neque"
     }
 };
 
@@ -1609,37 +1460,13 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'costEstimation' =&gt; [
-                'cost_estimation_id' =&gt; 'aliquid',
+                'cost_estimation_id' =&gt; 'neque',
             ],
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimations/duplicate"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "costEstimation": {
-        "cost_estimation_id": "aliquid"
-    }
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -1719,10 +1546,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="costEstimation.cost_estimation_id"                data-endpoint="POSTapi-cost_estimations-duplicate"
-               value="aliquid"
+               value="neque"
                data-component="body">
     <br>
-<p>ID Example: <code>aliquid</code></p>
+<p>ID Example: <code>neque</code></p>
                     </div>
                                     </details>
         </div>
@@ -1779,23 +1606,6 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimations/1"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -1941,23 +1751,6 @@ $response = $client-&gt;delete(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimations/1"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-DELETEapi-cost_estimations--id-">
@@ -2055,8 +1848,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"cordelia.armstrong@example.com\",
-    \"password\": \";3=l(w4I!uRSG)\"
+    \"email\": \"saul07@example.net\",
+    \"password\": \"_I!b)Dq%&amp;rsDih&lt;f|s#=\"
 }"
 </code></pre></div>
 
@@ -2072,8 +1865,8 @@ const headers = {
 };
 
 let body = {
-    "email": "cordelia.armstrong@example.com",
-    "password": ";3=l(w4I!uRSG)"
+    "email": "saul07@example.net",
+    "password": "_I!b)Dq%&amp;rsDih&lt;f|s#="
 };
 
 fetch(url, {
@@ -2093,35 +1886,13 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'email' =&gt; 'cordelia.armstrong@example.com',
-            'password' =&gt; ';3=l(w4I!uRSG)',
+            'email' =&gt; 'saul07@example.net',
+            'password' =&gt; '_I!b)Dq%&amp;rsDih&lt;f|s#=',
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/login"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "email": "cordelia.armstrong@example.com",
-    "password": ";3=l(w4I!uRSG)"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -2181,10 +1952,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTlogin"
-               value="cordelia.armstrong@example.com"
+               value="saul07@example.net"
                data-component="body">
     <br>
-<p>Example: <code>cordelia.armstrong@example.com</code></p>
+<p>Example: <code>saul07@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -2192,10 +1963,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTlogin"
-               value=";3=l(w4I!uRSG)"
+               value="_I!b)Dq%&rsDih<f|s#="
                data-component="body">
     <br>
-<p>Example: <code>;3=l(w4I!uRSG)</code></p>
+<p>Example: <code>_I!b)Dq%&amp;rsDih&lt;f|s#=</code></p>
         </div>
         </form>
 
@@ -2246,22 +2017,6 @@ $response = $client-&gt;post(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/logout"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -2364,22 +2119,6 @@ $response = $client-&gt;post(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/forgot-password"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-POSTforgot-password">
@@ -2450,8 +2189,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"velit\",
-    \"password\": \"dolor\"
+    \"token\": \"ullam\",
+    \"password\": \"molestias\"
 }"
 </code></pre></div>
 
@@ -2467,8 +2206,8 @@ const headers = {
 };
 
 let body = {
-    "token": "velit",
-    "password": "dolor"
+    "token": "ullam",
+    "password": "molestias"
 };
 
 fetch(url, {
@@ -2488,35 +2227,13 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'token' =&gt; 'velit',
-            'password' =&gt; 'dolor',
+            'token' =&gt; 'ullam',
+            'password' =&gt; 'molestias',
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/reset-password"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "token": "velit",
-    "password": "dolor"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -2576,10 +2293,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="token"                data-endpoint="POSTreset-password"
-               value="velit"
+               value="ullam"
                data-component="body">
     <br>
-<p>Example: <code>velit</code></p>
+<p>Example: <code>ullam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -2587,10 +2304,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTreset-password"
-               value="dolor"
+               value="molestias"
                data-component="body">
     <br>
-<p>Example: <code>dolor</code></p>
+<p>Example: <code>molestias</code></p>
         </div>
         </form>
 
@@ -2641,22 +2358,6 @@ $response = $client-&gt;post(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/register"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -2724,14 +2425,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://backend.ceanx.lubomedia.de/email/verify/optio/voluptatem" \
+    --get "https://backend.ceanx.lubomedia.de/email/verify/corrupti/iste" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/email/verify/optio/voluptatem"
+    "https://backend.ceanx.lubomedia.de/email/verify/corrupti/iste"
 );
 
 const headers = {
@@ -2748,7 +2449,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://backend.ceanx.lubomedia.de/email/verify/optio/voluptatem',
+    'https://backend.ceanx.lubomedia.de/email/verify/corrupti/iste',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -2758,22 +2459,6 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/email/verify/optio/voluptatem"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -2787,7 +2472,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-set-cookie: XSRF-TOKEN=eyJpdiI6Ikc1djZCZDZIWkJ5RSt3TVQ3OUhNamc9PSIsInZhbHVlIjoiU2h0TFhBQ2pWNHVGTnNNK09XOWpwQWdUcGRpZjBLQjBycVF3MEZDNGlpQUpNbG9FK1VYWG8rOFlOcGoxeVNTSHBrQXJhcE5Hd09rdzR2SnA4WnlKQVV1ajZEV2pISkkwY0ZBUWZpTUgwVnV6UmpOUFFWYzVnWUpZbnc1YTNjMnAiLCJtYWMiOiJiZTJhNDBiMmEyYTNiYzhiMDdmY2ZiMWIyOWJkY2M0MzZhMjY0ODc4YmUwOGU4MTI1YTBiNzRkY2JhZTBiN2VjIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6IjlrUFUwS0RkeFU4cTBEYURxR2puT3c9PSIsInZhbHVlIjoicnFkeFg1dmhHQ05TWWY0Tkd0V3p0NUY3WW41MS95bnlVcm5UQnRtMnFGbjQ1ZXl0cisrT2dqU2p3ajdIdGFQOExjd2tHZUNQTDNadkxQb2lORFBtdnFhTmVNVGNSdE5WOUx2MG4zL3JkSDBqL0NoL0Vpc0ZhNVlteDAwUFhVdGoiLCJtYWMiOiJmYWZiNjdlNjRmODA5NWM5NzYxMWE0NGFmMzNkOWUwMTc1ZDA0ZGIyYWRiZWNiZTc1YTI2ZDM5M2Y0YTA3OTAwIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; bjZkZMHXHk5KCjKnpjNwQoyweBxGVVGvDDl9qvGb=eyJpdiI6ImU5R3MwUUZuSWN4NXNESEtHUGpsTUE9PSIsInZhbHVlIjoiaVBuN0NBZ0xGTzkzczdvY1dxRllydnV5cmlEK01UaFJxbjAyRVZqLzNhVFpXY3dDbHdXTTRLQTBTazRMQ0Z6Wm5tL0ZmdGU4T0RhQXQ2SXlNNjZ6QzRiMGFka2Q2VHVveDdsSlNXNHIvcjFodllpUDZSN1dzbFhBM3lUaldOTkNvdFY1NlNtT1N0b1cwcWFNdk9ZbFhSZ3p1TFl5S1FiRUNhWDQrTElhVnlhQ3dQYTVXNGgybStQWGpxcGxtT2ZubFBrSUVjVFFFYkFqV04vbTA2bVo1V2dZd2tJTUNZQjN3UkdVWk9hZnVydlMycW1BOVliRTcvaFVqN3REZ2hyZmJ3dTV0My9ST3J1WGpDWGszZEFHc04ySXVZOSthMVVFVVpodEtmK3FZdmxueDhJc0hJTGRhelBLcFA5T0g0dDVHSkZNbk5nQmgrRU16YmdHc3UzcjNvWGx2a3c5a3VqY244T1RvcjFvSkY1a0lFQnNaa0pnc2VPdUVnNFUybVAvR1hOcUk2SEtUbTk2b3FpTnc2c2dscXhheTR0ekxscjVlb2NmSHR3QzYwYz0iLCJtYWMiOiJlNjA1ZmZlZTNjNTM4N2ZlNWJmZGEzMGZiNTMxNTc1YTdlZmRhMTNhNTk2ZjZjMzJkYTJmZmQ2NzhiY2RhYjhmIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6ImM0SWVwNzAxUm5kTCtCT2VjbFlWeHc9PSIsInZhbHVlIjoiSVpnVHRZeUZDVnR0eTBrQjNSa3o1ZEZCVWRES3FzZDZ5R1YwSTlKTXpkL0U4TTNDQ3JKSVZSRWt2SFhleHNsL1Z3cEljOFk3bEdsay9lMW1FcTBVa3J4QkZ2QktmY1NieXRUNnBIbGJNUGorNGRITDlJV2NXeW1TSEJrbWtkZFkiLCJtYWMiOiI1ODg4Njc3ODNmOGY0YmMzOTdkYTUzYTY0MzRiMWM2MjJjOWI4ZmNhMTNhY2U3ZWZlYjA1N2MwYjdkZWI1ZGVjIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:01 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6ImoyMlBuS21nWmR1RUZhWGcvSmppbVE9PSIsInZhbHVlIjoiM2cyekZtNXluYlF0S0FjZ2lKUFhMSjNxSytwbGZMQTY1VVpmRFJ1S2NSd0xURmkzQXh3cWpPV2tZMElDM29mMW5TMXcvZlU5MlRwZmhSR2dVbC9lSk1relFjbzBWQkJjTVhGdXRHWWRLWTdaMTZ2TGs4Wm1VdW5Zdm44L21SQW8iLCJtYWMiOiJlMzI0NDQyMTc5MGU3NWM4MzNkYzMwYjg3ODJiYWVjMDAyY2ZlMjhmOWEwZjE4ZTdhODE5NjI0MzhkNmE4ZDE2IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:01 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; jt41cvNZCynYu7ccvTjycoA5N2qcKgCZ5IGOfwjb=eyJpdiI6IlhJNGNMWjZZaFFZTVZ5K0p2eFBtRGc9PSIsInZhbHVlIjoiRjVJc0dJOTE3bXdwbkt5OGtYV3I0UnA4QWlCWkpVQmlET2d0VXJ0ZENGeEtiRUd3d04zbnBhR2RxQVNCelFWYWlPNFJQTG50Rk5PLy9wVGxsVDJTNGROWDlmcU5wTHNlSWduaWZBcUw5ZDJmalBETGlicWxWU3Y0NUpXRERRbndYcFJHdGZRb0ZLa0t4VVB4a2pOUzdQaU0yMWVrMkhDMmVMeDlnREE5RnlpQXJCV09yOWRTbm5pZmNWOGgrUC8rNTZJc3drUFBFazVvYXFNemYzSjlBZEtxRWdoZXh5UjlNZDZtOHNQSmxkZTRJMDZEdjNCK2I0MGsxS0tZQ1EyQlJiZjFRZGRDNWhYT3NHSnFqSEtPaHRxSWJCeExBM05ES1RKSzFsQWlhYTFka3F1c0U2blc0TlhobHJCQzZhNURJbkF1UnV3dFRyNWJPMDZTeVBUNzZjdzU1eWVMdGlOcS9UNzk0MkMzajQvb2NZVDNmUGg0dldnU1pEdVRrVVY0ZkNibXhGSUtXTkgwNDc0ZGl5Q0k5M3FlUDZFVTZUaW1sUEhLeEZSdEtkVT0iLCJtYWMiOiIyNWY5YzUzNTJiN2EwZGUwOTdiMDZkYWUxOGUwZWQ0MDc2MjMzYzk5MjU5OWNmNzI1ODg5NzFmMzRkODg1OTNmIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:01 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2849,10 +2534,10 @@ set-cookie: XSRF-TOKEN=eyJpdiI6Ikc1djZCZDZIWkJ5RSt3TVQ3OUhNamc9PSIsInZhbHVlIjoiU
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="GETemail-verify--id---hash-"
-               value="optio"
+               value="corrupti"
                data-component="url">
     <br>
-<p>The ID of the verify. Example: <code>optio</code></p>
+<p>The ID of the verify. Example: <code>corrupti</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>hash</code></b>&nbsp;&nbsp;
@@ -2860,10 +2545,10 @@ set-cookie: XSRF-TOKEN=eyJpdiI6Ikc1djZCZDZIWkJ5RSt3TVQ3OUhNamc9PSIsInZhbHVlIjoiU
  &nbsp;
                 <input type="text" style="display: none"
                name="hash"                data-endpoint="GETemail-verify--id---hash-"
-               value="voluptatem"
+               value="iste"
                data-component="url">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>iste</code></p>
             </div>
                     </form>
 
@@ -2914,22 +2599,6 @@ $response = $client-&gt;post(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/email/verification-notification"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -3032,22 +2701,6 @@ $response = $client-&gt;put(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/user/profile-information"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-PUTuser-profile-information">
@@ -3148,22 +2801,6 @@ $response = $client-&gt;put(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/user/password"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -3266,22 +2903,6 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/user/confirmed-password-status"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-GETuser-confirmed-password-status">
@@ -3294,7 +2915,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-set-cookie: XSRF-TOKEN=eyJpdiI6InRqY2c4UWphYWszRDd4QUdtcm5iYWc9PSIsInZhbHVlIjoiU1NpWFBLTmhIbEtLbEJZcnFIZVdXVGp2WWc0T1l5ays1RitjUVhUMnVRSDQxQXVIUi9Nek9lcWJBNlFFdGFjMkxuNlRZbWNGQWpXeTR2aEJHK0RrZVNEdjdiYVJYaTNUVmIveVBlemJXeGYwaW1pNGV6Y3d6blFndy9QdHlER0YiLCJtYWMiOiI3NzljMzQyOTg2ODM3ZTMyNWY3ZjM1MTUzOTRhNTkwOGQwNGFlNGNmYjBmYWRjMGI4ZGJhYzliMjU3ZTlhYTA0IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6ImRjalV1YmJ0NXhHSDV5K3JnYTBrQlE9PSIsInZhbHVlIjoiOUFLTEVMU3NERlBjWFVJMFZVdzVVWnEyVG1YUUJQNkx0K0JUbmQ2dFB0eGo2eHc3VnlXSUZPcUhBSHVRSW8wR1FVYTJ1V2lpYXY2UW9hQS9ieU9rNXVNVDBMbklRNUpoOU0vbU5rSkQrZGVkS0JqMnRNcmwwQTB5SjZCUDh5Q2oiLCJtYWMiOiJkNzQ4MzViMmUwMGI1YTRjMzc2YWU3MDIyMmZkZTM3OGQyNDhmOWM3MzUxNTExMzUwZjU2N2M2NWZiN2VhMDJmIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; bjZkZMHXHk5KCjKnpjNwQoyweBxGVVGvDDl9qvGb=eyJpdiI6IlBxbXpJWVVlRmJIZERBd3pINGpkbnc9PSIsInZhbHVlIjoidWIvdk4xYnptbGJCNVcwMTF5SjdBWkZ6UXRwRENvczdSeUtWU25MT0xEMXA2L3NKQ096WTU4VUJyc3Y1bzFKMWxudW5WY2RlZ0NWREZ0dVdHbEF3ODZJTFdMdmc5Sm0xcUFBMUhVTjdJbWdWdUlNQVp2K1N1Yk1XWEw1cGRYTkZjeXBMZkYwazJyWm5CVm92YWQvRERndjY3ZVZkRUtUU0NBcEkrTWdlWjg0aGZpdnFNNlBWYmV1ZWw4cCtKa242VTdlbUZ3N0k0TzJybG9tQk85UjUzTXk0ODQ0U2c4V2RNamFoTWRDc0tqUlFRWDdZOURoZDdNTWVOYkpQcnowcjk2UGhROCtwZHFEOHRtL0ZScm8yWm1UNWhJT21tcmZhRjlBYjZkM0VRVFNxQi9RajRHNm9EaGFXSkhuUnNMTnJEcG1mY095RitaaUVvREF4K2RNMFk4MXdDd1UwVG5DQXpVaDdscnJBOS80L0pLNWs1S0Jqa0pTZzVQTzFxdUw5M1B5ZFMrVkd4VExTbllTQUFNRno4M2hQU0FGdUcreXowSHFPNjJIYjBSWT0iLCJtYWMiOiIyYTU1NzlmNzQ4YzJhMmUxN2U1OWNkZWI0OTEyMGM0MDVjNjc0MDFiM2IwMWI5MTgyMzUyODRlZjcwNTRhYTZlIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; 3MQJmZWROWYLhKNasy3ELY3wVEmPWoBXfZWmfVzd=eyJpdiI6IndoZzhxeXJoK0ZYUE5xV29RVHJyT1E9PSIsInZhbHVlIjoibW1KMCtsa3ZHRXVEMXlGcjJwMGEwU2ZqOWFIUy9pcTNhZnJxWFpQRGR2UXd1YkJBV2pDbjVzZ0Rnc0RJclpyYkxJamFhdGlMdTVOdTRUVW9hSjRiUTRkNEZScXdoTzhBRGMwRTlwZE40b0JOdTF3U25WMGJmckJGdHVUdHNDN2YzbVoxZGdLbkpVQmNhbUtoVEpVcThVMnVjdy83ejlSK3d3eXYzVWg3UU04aCtEblJTLzNieFNzUkovTkxyMWFKWGw5b2RwRGR5cDhLMVNPdy91M2doVy9UTDN5RUFKbzdySHBIQkdldGxxUFpPK1UzOWNFNTRQTllaYXIzL1hYTXpZbmJXcUpDS0pTL1BqM242M0J2QVM5dVBFRlI3OFZwOE44ek5KallQRlprY0gzZDMvZlJSbE44dzh0WTVyeCs5V2x3R0hnRDdJSS9vTHYrMDhhaTlVWElXR2VVRkdvdGFWRVIzQUxnLzhnR1BlcHRVWVRIQmJ3Zm8veXFsNFkwL2VYY0VGRXpERmpzYUh4S3gxcWh6SktpT1JlTmVmb1JGMmlTNFlTckpFOD0iLCJtYWMiOiJiN2MwNDJjMzUyM2JiMTc0M2U1MGZjYWQ1Mjc5MGY4YzMwNTI2MzMyYzllNGUzNmJhMDA0ZGE5Zjk2Yjk2YjE5IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IkhwVVltK25maEhkalNLN1g4L2VRbGc9PSIsInZhbHVlIjoiMStkZWtOMS9Hc0ZMOHhyZE5wTWtKbEs4Rm13WEovQWkyNE5KT2tXb3UwQW4yY09GR2hWRkJHWFlJTkxJSW50M0J6NVBtcHVLOC9CTkNkU0MzZS9vU0lZZWplL0tIY2tybW9yMUNCTjM1V3N4bjB3MHYwYnhxaXVXNlFJeHZIUkciLCJtYWMiOiJlOTI1MWZmODc4MjA5M2E1ZjM5YjZkZDVjMmUzZmY5ZDkzMmI1MTQxMTljODlmZmQ1NDg1ZTQxNmQ0OGI3YjcwIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:02 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6ImVacDBtWVBqTkRFWk1jMk9VdTNQQ3c9PSIsInZhbHVlIjoiWXFJZjF6dFpxRlNSZ0VWM0ZRaUhqOFV0QklwWGJLRlJHSlNGTisyVkFqZGRiZVpGVnhUZkNBYXVEMGV5YzZYeTJIbnl4N1BHT0hkYk12NU1LVXpzUUFQWld5TW1UeGUwVVVEZmtjTGI4VXUvVVdkbEVTd3gxbU1OY1gySVV0OW8iLCJtYWMiOiIxNTk3MTEyZTE3N2Q4OTNhNTVjNDBjNTY5OGUwNjBiZjc0MzE1YjBlZjZkNjVkNDRmZjhkMTdjYjk3OTk1ZTQ3IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:02 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; jt41cvNZCynYu7ccvTjycoA5N2qcKgCZ5IGOfwjb=eyJpdiI6InRweU9hSk9tWFhzM0JrK01abG5UUVE9PSIsInZhbHVlIjoieWU5S0o4Q09OMlFrZ0o0UXZiQkxGWkdsSWJxUTNnWG1sUXN0Q01lQXl5cnhLUHhjU0JtNTNtbkNXdTBOd01hNU9NZzVGZ2h4WURqNGF6RVhpUlRiTkZrWFgvbHhLeUFSRm95NkhkZXVZVThxOGFaZDRrdnBPQUxvNmg3QW1KNTFnVCtxT1BDZVRZb0h3Z1V1K2lsOW5ha240RGZTVXBad1ZEYlpQL0Q0SnlnMUVOUzk5VkhpNFkrL20xOEJDUzhUT3BrZCtvV2hHTUxnakh4Rmo1L3BNSVpPWmVSSW83RDBZMkcwK0tFWFJwL3J1ZkJwRWNNL1BvRkNMMW5SK05iOFR4aXEzb2FwRitsQXV2Zi90VlFyRGNFS3NzY3grT1BsSzVMSnBESUZacExkeXRpSmI0bW4wRkdZWFJ5RERQZ2QyMlA3VmlKVDlOc1g2bGJ4UERYYktCeFMrN09pd1ppblVnYlZNcHVOSFArcXN6YzVEa1RyTi9zbmI5NlVkYjNSeHhSSzZ2WGc1ZUJYSlZvU0MwMjRiSHdHYVJPbE5lSlRaVC9UVnZ3V1ArTT0iLCJtYWMiOiJkN2U0YTZjNWJmY2UwODQwMmJlZTMyMzVhY2M0ODRiZGVjOWJhYzMwZWYxMDk4ZmZkMTBmNTBkYjFjMjNiMDZlIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:01 GMT; Max-Age=7199; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; RuiF4ZtNIs7R6xGrmkdschP1SfrNov9MCWol2JKR=eyJpdiI6IjJGeU1Ha2hwOERWSkk5UjBKY3VwNWc9PSIsInZhbHVlIjoiaHFhbytLUHV2NGdONDVLekpFTjlxUGp3VFJsU2VtamQ4K0ZudWREeXBwbW5uSEtldm0rSWsrSXBCYUdVdVgrZmQwYktjTy9ucGFLRUYvV3pmeGJXcUt5eXpPc21mUm1TeE80NWhyYkRJQVh2RXBTOFhWTDFBSjNFa2JDa0lQZHZnc1dMK2NuZEczQ21vK1NHclA0U0VUUjVDU0RnbTJyRmxtOUpQWElaNzIvWHJWcHVLcElhenliM1RQeDdOUE1IK3FycGxNMGRXazFJWjZ5WnhlY0NEbHIyeENUTFlEVS91YUFQVnpFUGFrQ0RDeHdQM0d6NnJTam1zaUtHWmgvb29qVWMyeThUakMxaHZydUVheVRIMy8vcU9QWlhLZUFHV3lLY0xMTDBydXY5WU9ldXlvL2FnVkpxRUFyb2RlTGhDM2VTZUQzNGdoS3MyVWg3SHNMNTZHb3JRMTJ5djlWTm1mbmxHYzlwcm9qbEc5RTJyK0c0QlZUK2RvS3F5QjI3UGdWSlM4TjNIRitaYTZsaUUyb3drem15MGtOOXZJb3A2VUUrcDBJaDdWUT0iLCJtYWMiOiJkZjNkOGNkYTU3OGM5ODM4MzQ2ZjE1NmJjOTQxYmE2NmFiN2I1NmRiMTkxMDc5OTc0OTRlYjMzNmZhOGYyZDhkIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:02 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3399,22 +3020,6 @@ $response = $client-&gt;post(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/user/confirm-password"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-POSTuser-confirm-password">
@@ -3516,22 +3121,6 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/sanctum/csrf-cookie"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-GETsanctum-csrf-cookie">
@@ -3544,7 +3133,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 vary: Origin
-set-cookie: XSRF-TOKEN=eyJpdiI6IkdsNmVscFNjbnphZVB1WGFZcnUzYlE9PSIsInZhbHVlIjoid1BjNU5QSU13MERiSFRDVlhKV0xvTDBXOTFXMDFvZmRkdnZiOTh2dzN0YThlQUZxKzNmSXEwdExia3AycVBXcS9hOGtKa00rMzVES010UjREM0tYcmtuejRpcmg0WWdoMUNNRFdoQ2pVZFJxTk9wNDVraVBDNEI5aTNvTENZT3ciLCJtYWMiOiI3MWFmN2NlZmJhNjc2OWNiZjY2OTIzODlkYjcyOTRjODU5OTQxN2VkNjMyMDY3MTM0YTE1MmQyYmRkYjM5YTY1IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6IjZqM1NBRWZKcmFaWXJpWFdMblVjMGc9PSIsInZhbHVlIjoiTzRzZDJWUXBXYTJSWHdKNHFXRnNYWXFqdk9wUTBDQ3ViemMvMzRMZUFIVmNmcDdheDlBOTF5UnQ2OWNrWUt0SXc2UWh5TEFRSkVCN3NtNlZPU2R0NzYrODcvdkhaR1lZcjNrbk5sVndnRVphUHRUN1hKNk94QWhIbmp4aU42dDQiLCJtYWMiOiIwNDg4NzVjZTM2ODBlYTAzM2I4NDY3MzY4MDlkMjI4Mjk5YTZlMmVhNWY1NDBmZTlhMDM4ZGQyZDljZWM0ZDlkIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; bjZkZMHXHk5KCjKnpjNwQoyweBxGVVGvDDl9qvGb=eyJpdiI6ImxxalBSWm5BTG56VmJnOEtQQ2djbVE9PSIsInZhbHVlIjoiZG9BaXFjUks2SEVHM3JML2o5V3NPQk1Sb3dseUU0aVFSZGRVTTlXcFVRbGF3M3J3MkdNR2d4d0lWSWwyQnlMSUdHNHZsVHlQYTBxUE1QQ1RCMXgrbXpWSmpGZ3p4d1JRK3RRWTQ3NnRwOUZ6QlNHTFdzd1FkcFQzendPcUdwL2pnd1dpRWF4QXJMdkVocENaVUVRbUlXUmxLcGJiZzhtZVhUOVV6SSttZkJzOGQ1Nk9wRjZIUGNleUtvVjI1ZUFoZTZMaDJYUi9oRUNHaWkyZTFzT1FYWDNGYzVLdit0NXdpbU5WRlNNOUxsRmJXZEhWZFZyVnN1ZElhRnJ1Zm41MmpsdGtOWisyREFnSURhR0FPc3VQdUNtb2F3c3VRTSsvTk5lTVp0YXREQTcyZFRualM5S0ZNRm9iZkpnTEx2V00vMmFVT2gva2htUktBTldYME1zd2ZpZEpwUXBkNlp1dWdTTEkxTVA5VHlKMjFFQUszU3Z2Z1BrMG82UGVoc1JRRFVpdE9zYTJ0Lzl4YkltQU94WnNnQWx2TzNtQjNoSTBJdzhhOGZsQzJwVT0iLCJtYWMiOiIzNWYxOGJkMGU4MGE0ZTE1NGUwM2IyYjYyNGJiMDNkZDJmYTNkZWVmZjZkZDJmZTFhMDhlMzIxYjhiYjAzZGU3IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; 3MQJmZWROWYLhKNasy3ELY3wVEmPWoBXfZWmfVzd=eyJpdiI6IkdtM0VvUWVOaUprTjJCVjE2K1JhN3c9PSIsInZhbHVlIjoiMVF6clFGMXlVckluWitydVoveGhLYXBSQjNaK1JMdGtzRWlVZmJlNzZlbUJyY3k2ZVdDS3hoY0VWaUpGOUdGT2loSEdaRXdpSDV3WTVNeTl3WThMcFIzOHRGemZxQ2hTUkpxdTJwLytZWW82ZGllTXg1aGtxS1BNL1Y0R2xGdndGakFWTHZCdEVKTmZqNHVma3krdzZ0WlNUS2RiU1MwMm8vclBlaEVOcVNwYy9PditGeWtRNmJWa1RUeHNuWUUrN0dUYWxpcG1lTmFEZU5VL1prUklRSEhiT3FWYnZJOFRIRmN6ZmdIbWszSE92RjlGMmU3U3VIMWt6UVQzbjlSalpVSVNOeE5KV0poZ24vM1VDUTNOZjhsbURESHdSTjgzMEw0SUpjdTQ1Z2hlOVh1Zkp3ZDJnRXRoMEFUYW9jbDZrZk5udURhelFZdy9xZk1yZ2szTmFXQ0xOdmZzV2orVE1SYkJpS1JUV29ZZVhvNFRIckRXTlBqYXhvWHNlQnh5R2ptd2dGYTI5QmVDVisrUktnN0gzTDAyTEE5VDBKL0ZYQlhDQy9UMUs1ST0iLCJtYWMiOiJlOGQ5ZDg2ODkwYTZjY2YzOWEyYzExYWMxZmZmNTA5N2QyYThjZDE5YzdmYjdkMjU1NGUwNDQ2YzZmZjQ5MTM3IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; vFHPS492X190aKadHkChqH3XyGwTR1Pn7yFt06zm=eyJpdiI6InZ2d3B6VjNYK2J1ZDBoTE5Sb1hZcVE9PSIsInZhbHVlIjoiTm5pYk42aWNMTG5nNndJVm5MdFhtZ0VZbmJsNEV2Y2NPSEtBbXVLaG9hMW9KZmcwUGl6TWkvbXJUdTZPc0FzUUlhMnVLTDRVVld2WGZnOGtlLzV1MmhGeEczWFBMS25Wd3daTTB6aFpTUFBGL3d3K0x4OUtoL1VMYVZnZytXaDdzazdKV2JWVjVtSVdrTGdxajJqM0l3NE1RajdTYWM1OHE3Q1hEazJCcisvNnBqZ2QrdmIvS3dCY1VGTzZwUStINXlaUGRLdGx4aDNlMS9PV1lacGx6SFgwK3FYNXVKWVlQekpHTW5YMXNhSzNzU2dTVXdhUzM5cnczR1d1TnRCeUNhTHEvSXAwUTdDREJwRGpORWRrcXBueDgvUVVOVUdseWdxRlFaWnpPSW5qNTdjb2tRV1Bkc1o1T3ZyU3R2S0cxVFBuODk0bGdiVEVMVTJkRzdieXN4L09KZ3dlUzI5TzBXRy9iSitRd2tSb21ZYWZKQUprZXorSWZwUWJJUmpvOXU5aW9tVkxZaVhvSHBLK1luY3ovWGx4L3JKdzgrU2V4MWROMGpnRmRNOD0iLCJtYWMiOiI5MGRlZjc5MmVhMjhkNDU5OWNlNGZlY2IxZWVhZGIzYjNkOWYyMTY3YmY2ODBhY2E0YzIzMTQzYTA0MmVlMmJhIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6InVmNXpSVkRZUVpIVWJJR28zVENnQXc9PSIsInZhbHVlIjoiUVgyeCtuQnZXR3AvSkxnZXovMEQva2JYdm5yMndLdWVYSFhpTFJtU2hnUERWd1BCWVIrUkwwam5uckNYYVVqOTBoRVZtYmFFZG5Kc3psSUthenpGU3ZENkZZWkFXWUc3SW5OSFB2V284OU9rejhiZWRCcmdMcGxUc0MwL2JOT0oiLCJtYWMiOiJhNmNiZGFjYTI0NTE5MGVmMjEzNDliYWM4NDFkYjQxMTI2YzgwZWUyNzU4MzBmN2ZjMGE0MzNiNDljZDFhM2U1IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:02 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6InVXWFFWNVFmMlN1aEYzWnluc0FRRHc9PSIsInZhbHVlIjoiVEZ1ZHV4cm5rcmgzUVhvMkxiN0JGYmNPRUtoYlFYb2QxY3hWdDJvU0crMEwwaE5GcmtBNEtnSWRLNkNCRldGRFBIb3p2R003RTNVdzBJSmhhejdNenk0SU9XcmdJUStnUUV5YTFrV3ZiUmRaekp1OVFZZnZpOGloejlXc1ZZZ2giLCJtYWMiOiI2MWI4M2U2Y2Y0ZjViM2NmYWUzNWJjYTU5MDBjYzljMDk2YTQ2ZGU1OTA1YTVmMTE3NTEyZDAyNTIxNmRkZTljIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:02 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; jt41cvNZCynYu7ccvTjycoA5N2qcKgCZ5IGOfwjb=eyJpdiI6Im9MNjRpbUlONi94QWhoYTZoN0RLbkE9PSIsInZhbHVlIjoiOHhXN1c1VFoxNEpEVVl2ekFxWVJiSExNTXVxcEE1WndUYS9hdVhIRGtXbWdwRDljL2Z6eTNGZ0ZFQUlZUGNFTW5VcHFXLzFaWXdJRXVraHV0OWZWcjRKOHRHUEtqUUpuUm5ZeE1vRktlR1JOSjJrYUp1WEl6eDVRR2hNM0R0eGEwelVVK1MxZ0lBYk5lTEs0V3luamYrZWNDSjZSQ3JTcWZWN2l3aithWDdUd3FKeHFGdGxCQnNQVEhXS04rV29lYjlubmRUbVpXRGJ2dTRYLzEzWWRVS0Y5OWlEa1d4UkFyQlJmNTJUWGR2aHQ0U1ZKdEVjVWJWeW1mUVFwSVZ2dmNneklmOEtySEZBR1FxK1RHa1gzYnlSelRxRTFMS2xHS0F4VEhJS29ZYkQ2Y01keGdwcHJvTHhzb0JteVRQTFVsU3lGcFJiMHExVVZHOEJFY0ZXME5vSkh1ME5JNlcwWjJ5aXdQSWw3MlJGWFpvZlIxTkpIQmxrYjI0TFRZMjU1eTRvNkd3NEp4andEVnQ3dU1vK3krbktaU2Rkc1F1SCswTjByZnBrM25sZz0iLCJtYWMiOiJmYmNiZGM2ZmIwMWQ0MTJmZDU1OWU1NTkwYzgwZWYwN2FhZmFlZGZmOTEzNzI5Yzk3NzA4ODM2NDI4YzlkNjNjIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:01 GMT; Max-Age=7199; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; RuiF4ZtNIs7R6xGrmkdschP1SfrNov9MCWol2JKR=eyJpdiI6IjRXZEJrZXJnQlR6V0JyK2ZldWxRcHc9PSIsInZhbHVlIjoiQlJWL212U3ZOL3AxdDJLM1dhK0tzM2JtZVRMeVIxclpreFo0MjJaVytuSGxmdzVqMTZYQmdvZ1F4U01Wd3BEbE43QmNNVnRIcGtOTTFobXh6RjlidEFYUUswMk5hby9ma2FLd2YrQnRmb0FJWlRDdmtMdGdtZE1vdzBRNEJPVmd1T0lkTnh3b0tJNWt1My8zTGVKazc3ZUtQb3B4NC8vWXNJMENuSDg0VzJWaWRYc0Mwcmx4ZmJZeStKeldLeGUwTHMyT1YvL1Y5R2kwQWd0djZEcEVPYzFQY2ZOVUNsRlV4ODZIWnlaWUVjN0xVYjQ2N0tmQ1E5ZGQ2bEVBT25xdjU1eENnaVJzVGNVRS8rZkdZQitoMG4rUjN5SHRjZlBGNFlURVlMUzZNaGUwbWFvVzhMQlJRZjZJZzJ2eno1djRzM0VDYlhaVFNob1RvV05Hd1lJL1BHY1ZmUDZwc0FOTFdPQ3VUMStJTTVWNzNhZXBZaCtSRDZvdHNQV3NCWmcvdS9UdFIydDE5QW5TWGNTSDE5NDJkcmZNSnZ4c1UvRG1lRVludDlRTmQxdz0iLCJtYWMiOiJiOTVhNzNjYTI3ZjMwNWYyODViMGE3MmQwMDA5M2U1NDVmMTQxZjg0NDU1ZDJmOTgwOGNjM2UyYzI0YmQ2NWFjIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:02 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; 2BV1L0Arl37pZK1Ro8n19wYlHjgwoikXbzIdT9Bu=eyJpdiI6Im5IV0JQV2F3bnJSZS9rN0R1dy9YSUE9PSIsInZhbHVlIjoiQ24rZUw5bk9GZGkrN1k5OXE3dTV2TjFQV1RXQnk4K0Q2MWQyaW92eDFXYjh2R1NlOHJVaExOYUNTZ0ljeCtZY1BqeEhYWjh6cFF4dm1pOUFZRVZpMTlGd3dTcXU4Q0NVRkRONVNOU1NNZ1V4RWt0cU8yc0RBMzBHYWhsUFVWUldYY2dwZ1BOUm5YaGVNVjRobGxJTHp0ZGtoUlBGVWlMTzVSN2NSQVpJSVFldlVnNVBGeTdyMDlhTnk1RTlmV1VDUTlxL0duUmN3dE1oWXBOeEZEbFhEaHpRb09CSmFLa2c0R1pWLzc4Vlk3ZWFVNUc5UUJBT3VwMmtSNWhuVVl0a1YzbGVOTWFaQ1lQU0NNdXBNcEtGWGYvcFpGOHpqRzl4OU5OTCt0TnF1dC92dng1ajNtU2lVNzFZOW5KUkxqV3RCRnhYb0hoeXZoSHFlalhCYi80SE1qSjFTSEszN0dTbFlaWlR4ZUdBSmxkMGt2R21SbHVNMmtCREw1TjRjUVA3ejdaMGV2L1dDWGtjUUxMeXJxcW1xd2lhaXNOQXV1cUM5U1RUNmErRkhRMD0iLCJtYWMiOiI3MDk3ZjNkMzM1MGY1NzlhNjgzYjRjMDZhMDhlNmVhMWRkZmI3NmIzMWE5MmUwZDkxOGFmOWZmMzEwMTQyMGM0IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:02 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax
  </code></pre></details>         <pre>
 <code>[Empty response]</code>
  </pre>
@@ -3646,22 +3235,6 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/_ignition/health-check"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-GET_ignition-health-check">
@@ -3747,7 +3320,7 @@ content-type: application/json
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"solution\": \"rerum\"
+    \"solution\": \"tenetur\"
 }"
 </code></pre></div>
 
@@ -3763,7 +3336,7 @@ const headers = {
 };
 
 let body = {
-    "solution": "rerum"
+    "solution": "tenetur"
 };
 
 fetch(url, {
@@ -3783,33 +3356,12 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'solution' =&gt; 'rerum',
+            'solution' =&gt; 'tenetur',
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/_ignition/execute-solution"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "solution": "rerum"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -3869,10 +3421,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="solution"                data-endpoint="POST_ignition-execute-solution"
-               value="rerum"
+               value="tenetur"
                data-component="body">
     <br>
-<p>Example: <code>rerum</code></p>
+<p>Example: <code>tenetur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>parameters</code></b>&nbsp;&nbsp;
@@ -3904,9 +3456,9 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"theme\": \"light\",
-    \"editor\": \"porro\",
-    \"hide_solutions\": true
+    \"theme\": \"dark\",
+    \"editor\": \"ducimus\",
+    \"hide_solutions\": false
 }"
 </code></pre></div>
 
@@ -3922,9 +3474,9 @@ const headers = {
 };
 
 let body = {
-    "theme": "light",
-    "editor": "porro",
-    "hide_solutions": true
+    "theme": "dark",
+    "editor": "ducimus",
+    "hide_solutions": false
 };
 
 fetch(url, {
@@ -3944,37 +3496,14 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'theme' =&gt; 'light',
-            'editor' =&gt; 'porro',
-            'hide_solutions' =&gt; true,
+            'theme' =&gt; 'dark',
+            'editor' =&gt; 'ducimus',
+            'hide_solutions' =&gt; false,
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/_ignition/update-config"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "theme": "light",
-    "editor": "porro",
-    "hide_solutions": true
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -4034,10 +3563,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="theme"                data-endpoint="POST_ignition-update-config"
-               value="light"
+               value="dark"
                data-component="body">
     <br>
-<p>Must be one of <code>light</code>, <code>dark</code>, or <code>auto</code>. Example: <code>light</code></p>
+<p>Must be one of <code>light</code>, <code>dark</code>, or <code>auto</code>. Example: <code>dark</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>editor</code></b>&nbsp;&nbsp;
@@ -4045,10 +3574,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="editor"                data-endpoint="POST_ignition-update-config"
-               value="porro"
+               value="ducimus"
                data-component="body">
     <br>
-<p>Example: <code>porro</code></p>
+<p>Example: <code>ducimus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hide_solutions</code></b>&nbsp;&nbsp;
@@ -4069,7 +3598,7 @@ fetch(url, {
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
         </form>
 
@@ -4120,22 +3649,6 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/user"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -4254,22 +3767,6 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-GET-">
@@ -4282,7 +3779,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">content-type: text/html; charset=UTF-8
 cache-control: no-cache, private
-set-cookie: XSRF-TOKEN=eyJpdiI6IkRnWmd4MWQzZndRQzRzN2REZ2svM1E9PSIsInZhbHVlIjoicFY1TXZhSTdaQ0xET1RKckVlaldwdVloWkl2R2JhN2FvQkt5ZkxEY2p4YmhQQ1QxK1ZtQTZkNEczYWxXT21TSU9xeW5wcC9RaFNjcThFYmhpTjRRQUdIcXFISEY3V09JK0NBN3RQcnljdXM0cURnMzVSZlVNTU40ZDZkUXV5RjYiLCJtYWMiOiJlZDMxNDNhZjJiMDI3ZDk5ZWJlYTg3NDM1YWUxYmVjYThlMmZkZjgwODg5ODVmNDY4ZWU1MDExZTU3OTQ5MmJhIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6InlFVVF0Y2lBMERtT1dDbXI2WWJXSUE9PSIsInZhbHVlIjoiVGwxbUNMTVVRRW9ieVdkUk5JaEVISW1veFNIUnFYdzNpTktvVjltY0dSVXB1K3paSXMreEVoTVNWV1FRVk1vbGUvMnk3bjZ5N1o1NmsrMWxWRFdEYi9jaE1QNjdSeG91STZzeUgyOVhXQjZBTjRTS243dEhiMVlGZzJ5WnFVd3EiLCJtYWMiOiJhOGIxYzg5YmMyZDkzNTMzYmNjZmNhMzQyYWFlZDRhOGNmMmIwZDI1MTg5MjEwYTQwN2QzOTljZjk2MzIyYTA0IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; bjZkZMHXHk5KCjKnpjNwQoyweBxGVVGvDDl9qvGb=eyJpdiI6InQ4WnJycHNzenQvRW1WS3AxVjcyVUE9PSIsInZhbHVlIjoiNXU3Y3JWREJURm1tbEZJRDgzcHF4QUxTMXhxM2FtTjY2T0JFdjJLcWtiWk10Qml1eVZxZlQ0bk0vTkkvZTVjT0lSNHdyTVVWVnJsVUVxNnQ1VVJvOUhqUXRRSEpCMHBqUWlmd0lQeWR3MkVFd3VMNW9sL0RMQkZwencxQk5jSEZnK1RpQ2ltbVBzckNsclBQeGkvZzFRUTRzTGF5T2QzYm1NQUtNUGNvV2hwc0JHSndjYURiSVRGZEZjZUpMMVZ6NVRxYTBGOFRWbTVuT0xITSt2T3lpbm0yWk10VmVOSTMwSDh1bVZ3MnRuR09jMmtlL3I5aXkrUk4vUkNsUWU4UlgrVXI0cDA5RGZ0YVliR2VqTTlmc1lRZmR6SDhUWFlEb1c1Ym11bUhoOUhZY1BSSVVYRE9kNFlmK2piTmRyUk1SZ2MwbHJoTXR3clNTcW9KZGxYeFZITFU4T1JieTg0RWgxUTV2eDlCSUt5cWVDUHhZZ1ZOQ1lybmFlT3BaZEtNRmphV05nV2ZVUWtxK2RlNzJZL09JWjQxVmlvTWd4Qzl2clRGNGxNS0dhWT0iLCJtYWMiOiJhYzNkYzA0NTU5NjQxODY2YTFmNTJiZWZjOWYxM2M3MzE3YmIwNzEyN2EyYTNmZDVkMmQ2N2YxOTdlMDEyZjJmIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7198; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; 3MQJmZWROWYLhKNasy3ELY3wVEmPWoBXfZWmfVzd=eyJpdiI6IkgyNXFwSkhXZzdPYmRwV2IwN3czUEE9PSIsInZhbHVlIjoiZUV4cjVHRHRIMVJJaklhWlFNRFFMS3NkK0FPWm5hcFV1WTdYUXQyYmI4Z2lSZkljQjI2TVhuZStaSTFwZFFBd1VxRnZ1eDdVZVBKMENZRU1rWi9Ea2NWMmlkZnN1dXJEck9yZjE4dStkZU5jemJaQThoZGpQZklxTmJMakR3UUV3bENSVUcrdUZqandNa3ljVGlWalJPSGpkenZzZHpoZVJIcERtb0VmQjhRWHpVMlMzdXlHVjhMQ2tjVHBpSlF4ZHk1SFYzZFM4WVJ1M3Zwbzk1dDFQcHFseVZ3bUh5MS93U1JubUJidTd0UjV1YStHZEVxQlZFdkZ0K3ZYQlJqdGpJNk9sZ0JzNUxEaU1ZSExWbnVhVnAzM05udmFiOWpWK1BEK2c5VFZtODhFZVhCcnlZTUdIYU1kcEg3Q2d6c082bjVIaVRFbngwUVRVMXFXMHk1TithZzh6MlhLdWJxaTVpZUw1bnVybEFPUHdZR0laUWlGUHpBTGJ2clVtdE9xY2V3N2JtMjRGdzZRb291bG9RRUozMFFSaDd4eUdkUHYzMm0zUlNPOW9TRT0iLCJtYWMiOiI3ZTY2YjBhYWU4MWY2YWYxODRmNTgzODUyYzBmMDdhOTQxYmMxOTBlZWQ5NTM0YmE4NWEyOWEyOTQzMjNmYmNiIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7198; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; vFHPS492X190aKadHkChqH3XyGwTR1Pn7yFt06zm=eyJpdiI6ImxrYWw4b2VyR3NIcGxZWC95TFBmUmc9PSIsInZhbHVlIjoicTJFSnJYOEUyaDdTZzhaNWtYUWZyc0wwUjJFNVpxY1ZKWTFHa0QreXRkWjV3WWExV2F1Y0V3T1k4eEt1Wlp3NGRQS05tVjJFTndoZGZ4U2wyZ2tOWmNRb1JUQWFMcTh3aGZHUEIrWGhITWFVUHFBdzEzVmRxWDhqbHQxTGF6bG9XYzJwaS8xeVlMT252b3krTWVhQjR0Q1lBRU5RMW5GeFpGbmFmMTlkT0RYbU5qYXJRVXZ5NEVVMjV3ejE1U2pqeTluRmRkNG5sYkJCbXZvanFHY3RRZFB5Y1FZaHRJa2c1NmJZS3cwTytzZkpxcEVjNGFzQXhpTUQySUV4SnNOK2p5OXVPdVNsRkhqWnBzcWJZWVhHQ0xReGJZMSt2VzlNT05zU1FndmJBVlpiUU9NdWJIV1g0bVhaMk82d0tTV2lveUhMelVWZE92Q2xaV1hLRFByVEoyeTBHWFhJaWRnelBadkVXQThjbGsreGYzTTBZTFBDVDVLekpBcWtGalUwb0ZYYUNlQ3RYSUxTWlYvbTQzcmN3TEFDSlJIdkJWcXZlTU9tbkFPUm0xYz0iLCJtYWMiOiIyYjA3NTZlNTk4NjIwZTUwMGRmNmZlZGE2YzQzMTFjNDBiOWI2YjYwMjE4OWE0MmRkNTcxMmE0OGQwMmVmYzZjIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7198; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; VU3Gz0tX8z74ggV4H039MZO5AUJqnBOK59TRZV1u=eyJpdiI6InZ2L1kwa3p6QVNoS0hha25sVzQxUVE9PSIsInZhbHVlIjoibkFrOGZlaExjNEQ1U2pQdGRNZ2V3VFdCSVpZY29SdFNicnlQRjhOcXAzZEsvaGhlQWhmNHhiZ2VnSHdGZVlQVDVwczFhZHVUc2JLRFg4ZWM0YUtnOGxjQTExRm5BeTVkTk5yTGkyU0tBOWFZWW5RMjN5clFKOWd5Z1pISmRhK1lyZzBEK08rWkZIbldQaUFIK2dsM2VHa3BXVmRiMm1jWENZM3owMmFkbnQrVzVzV0lzSGVQZ0JvUENVd2ZMaVhvS1ZCaTJLSkpoVFNPa2hwOTFNMFlrKzZtaXZuYWpLbUVyaHNZUDBQK0haNW1wR1ZVVEpmWG1xV09uaFhoSE05dS9teHc0c25zamNPSWoxSFUveWpiMmZSQWp0bFY3MEZ2U1EvUUlZcHVkZWlJOXFid0IwTmVuR3JiRGtka05mOHJ5aGpBZ1dBUythK3BKWEE5a1JOSWt5Zi9EdEQxRnpJZlhJVWdWL3dBRDl1Y2VzM2NqZlRsZjJEMWJvZmc1dE5sIiwibWFjIjoiZTlmM2QwMDVkMTFmN2EwZmNiY2Y5NTFiYjJjOGI1YzMyMDE5NjYyYjhhMzAwYTQ5Y2IzMDQyY2EwODY3Y2VlMSIsInRhZyI6IiJ9; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6Ikppam9PYkZUTnR3QWJuWFArMHFWQ3c9PSIsInZhbHVlIjoieWpFN2IvZnA2amQrN1hSa25PSEdHTlFpUEZKN3BmUUVBOGtBQzBKQUR1NEJJM0c2NGJKd2NUTm5MdkJwMmxRMEErMGIrMmRoTDRQVmtSQUZsVFFtVEoxT0pnb0taTWpkVXFiUHdMTXhEb0pOOXQxVWttOVNjeXJIbkJGTFdtRnYiLCJtYWMiOiJhY2NhNGQ1ODkyY2FkOTBhZGQ3ZTI4YWZlOTg2MmI4ZGNkZWEzNzRhNTIwOTFjNGIxODI0YTM3YWFjYWNhMzU1IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:09 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6InRxdlVRM2ZmUFRueFlGNkZJZU1MaWc9PSIsInZhbHVlIjoieWVtd1FNNkVUMjR0YTkvVjV3M01BV3licWV1SmVUUUFnb1FBeDV2cDI1Y3l2bzlGM3VHb0pqa291eEQxVjAzdlY1K29ISFUvRlM5VVBaWlUwQm1leVhwK3RyWkQrZTc3UXlyNkx0SHNIV3UxOFJZdTdUcWJzSEVGSnhJd05QcFgiLCJtYWMiOiJjZDNhN2RmY2U2NjY3NjJmODU4MjVkOTU5MTAwZmI1NDY3YjcxM2U1YTY1NWU0MjFkYzQ1NGRiNDgxNDk3M2UzIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:09 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; jt41cvNZCynYu7ccvTjycoA5N2qcKgCZ5IGOfwjb=eyJpdiI6IlF1SEJLVEgyQ00vSldaWnRicGNXSHc9PSIsInZhbHVlIjoiQXU3YnpPaERKanFIeHBvd3pwUXJ3aDhRbFlWbWhmY0hGWDJHcGYrSmp6Nmh2Zk15QXFlTWV5YkxpamJpWnY4bEVlT3dEWGVtR2NaczBvS2xzdGlvaVEyWVZIaHBqWTl6b2swR1YzendBa01mNjQxSlhIQ1pJaHJhMURyMHdSSnpZMXVSZFNnOGRnaVgwaGlYaWF6eThMcVYyazJFdERQZDZGakltSWZEU2V2ays1MnhpVXdHd2NuR3cwVkF6ciswYmhhZ0dpeWp2Q25PVGhrWFg0c1lGYWRoclhyRWZ1Sml1KzQxL1FlcVhSaW0vRnd1ejNsY1N6Y3ZRWU9RT1VEZ0N0TEZ2UU15RFhpdTlsS0NTTHNROXVxVzBoNEJpSHRTNCtYeWZUVyt2SHI4bkFOb1FpcHBMZDJOdU1BbHNCbTJwanhUWmJCZVlnZTArdGhpR0lqZ3ZqRXBqSmlIRE51dHNuS25wMTJ0M2x6NGNPRWRybmJYa2xVQlJ6VkFjWE1BK0ZXbUtoVUR6cDV6YjZIVkxuL2l2UFpBUm9lR0p1VUc2NXJaUTQra2l2MD0iLCJtYWMiOiIzMzA5ZjQ2ZWFiNDk1YmQwOGNiNTc1MDZhNjY3OGVkM2I2OWU4ZDkyZmFjNzNjMGM2NTM1MWFjZmRmNmYwM2Y1IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:01 GMT; Max-Age=7192; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; RuiF4ZtNIs7R6xGrmkdschP1SfrNov9MCWol2JKR=eyJpdiI6Ikw2empyeUdXYm5NdVpobzVpN1pQaFE9PSIsInZhbHVlIjoiMnRTMStadzhGUUlMTlpjaVdGMFF1Z3VRak5ud3dZdlpKUDRmUzlpSVRzSHhDSlo3UU0rYnd0T2VMVEg0TFZ5dE5GbjI4bEZaYnYwRG1haXFVRmp3aTlkcDRmS2p5WjNPL3ZhOWR6ZFpIR2hwMnRoOW1jQWoxUmdqdHhYSTlrVXM3UkNPQWxCVXBUV0hsbTlKZTlJdThBT1pPUlR6ZUtvaDNQbmUwWHlSNnlGV0pDUUJ6a2ZvWXVtK0dacGZVWnhnaEFsNVhER0N2SXJ6eVN5UzQveTFFb205T2lhQTQ1aUp3MWxPQVJZdWdOTjU3cVV6bVBOYlB3aWJ2NEJzNnVCU2s3Y2ZTOGg1cjIxdnJpVml2b0dpaTZMM09lc0ppWkdvdTBuNjBQd1crcHZiY2FDeWRBTTZWdzd3TFFXTE9GYk9yWFo2SGxzeTBrRHYzakIrcXZYZ1prb1g1dlVub09LcFZpSUtIWlh1QVo5S3AvMGtpdGtqNmhZMjdTeVBvbW85ZkcvRHQ4dVp3WXpBa0ZzYjlJbDViRmNBQkU0UzJmdmNibnVENVlHakUzbz0iLCJtYWMiOiI3YjU2ODc5NDgwOThkOTA1YTQxMmY2MmEzYTRiMjVhMjg0NzE5NmUzODI4MzE3M2Y1NDhmMTUwODYxNWI2NjQwIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:02 GMT; Max-Age=7193; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; 2BV1L0Arl37pZK1Ro8n19wYlHjgwoikXbzIdT9Bu=eyJpdiI6InpKdEtSQjlxK3lrK1hwenlDRFI3Y1E9PSIsInZhbHVlIjoiWS90NkF4T2p0WWRQWHB4RDQ3aXBKbkNQTkZYQ1ovOXFud2E2WWYxNU45WGZKc21TQzlNNWcxREpBREp2QklGV0hCNjIrUjFmNi9EU2h3UGV2Q1VGenUrY04rWHpId2ZEL0w3SWt0K1BSWDdIRTNkSWNrZlQwY2tYeThVRVcva0RoNHZYVm93U3VjaWpzSGVJVUoyUWdnak9ncXBlV1Y2MzREMVJNOXBZT0VScGlNTmI2Tm1IcUpyV3JXanErcTczTDBNa2VwdmZyR1hDMGZFNW9vejl0cW0zRUJUMWlHei9KUmduSDcybm9CeDFOcDVEZG4rL2N5UDV0ZlgyZXBwNnZ4UVh1bDlsTzB0NnpRbWQvMk0yUm1aa0N3eHVvTjcyeVJhTzRFdCszMGxYYk1Mdis3R2tobnIrWm04ZkxtTFQzTVppSXgrS0MrNTRpQ1BEdHlsckpIOUtTeThjcXdZa2UxRDlmWnhpS3JXMHB3a0llSmlEVFRrVU1HdTBNQmw3NE1MeW9XRFVLbEk3SHNKRVZwZHREMVRFU3RGYVkwVEFLQzgxUXkvd01RMD0iLCJtYWMiOiI2YTBhMDk2ZjhiOTc1OGZiYjBmNjUzNmYxOTMzYmVkMGQzYjRiYWRiOTFkZjI4OTU0YjQ3M2NhZmNmNmIyYjQ2IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:02 GMT; Max-Age=7193; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; G9D35xteSSU5VHRHMQ2Lo6EszhvR7yUNozLkwjVP=eyJpdiI6Im8wZXFNc09LQzhYd3BPaHpNelNlMXc9PSIsInZhbHVlIjoiR1pQTyt5K3BmWXQwRmdxejJHVm93cnErOXg0UFQvS0tpU1dhS3VxOEhiZldFTURUSmxLZm8xSGZxRFNHeXNXUE1xTUVPTkpKc25mZDJDNmI4Z0FpbTZkUUk5UjBTSUFEajZramNwcWg1WWt3MThZSFlHdXE4TlYrL2xSV0orejVhZnNIaEhTSmlabW9nMnJPZkFmUUQ3aDRrbHFGbFAzc0JFYTJXY3F3Rzloc1BsSE9pOHh4T2haV3JDRmxCNDJqWUh4R0VoLy8xdGtsMUZkVms0ZzFVMmk5S2NySDFuaEJZeVlNVnFGQTlhOTdzSjFNMEIycGRtYkV5OWxkNWtUOFVhNWEySlNzamx0QjdoNlJINVhIdjYwNUJQTk00UW5ybHpjNHd2dk5veE81bnhkUXg1Wkc3RTBGR3hEYmFPNUUxS3pOQlhuUFFlTlVuTFpEZHQxckdsZWl2WFJ0dHBqbExPWXZMWERZdWIxU1Z2YzVaYjNKQTI1UUIzQmFOdy8rIiwibWFjIjoiZDkxM2Q1MjJiMmExNTAwNjQ2MTA3YjI0YzJlMDcxNjlhZDAxNmE4MGMwMTI0Y2YxYTM4YTExNzYzY2ZlNmFmZiIsInRhZyI6IiJ9; expires=Tue, 07-Feb-2023 21:05:09 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">&lt;!DOCTYPE html&gt;
@@ -4503,22 +4000,6 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/home"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-GEThome">
@@ -4531,7 +4012,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-set-cookie: XSRF-TOKEN=eyJpdiI6Im5XQWVucjR0WlY1M1NJOGdmYXNUWkE9PSIsInZhbHVlIjoidjg4WnMvS2ZzQ0dQODFnRWtjdXRJTTJZUG9mYzEzVmFQUlViek9iRU01UHN3WSt4TFZjUWRBODFvaDhibDV6NFUvRFQwck53OHdMTHNHRmVaS0sza3JoYjR3eGQ4bG1TNWp4VjVTNVVZSkJST1N6UG52eGlnNjhiT2hONkZRdE0iLCJtYWMiOiI3MTc3ZGM4MThmMzA5MmU4NjFhYWRkMWQ3Y2ZjNTRlNzEwYjc3ZDE4YzhjOTFmODg4Yzc3MmMwMmZjMWUyY2MyIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6IktvM0o0K3FHazFTRXZGd1pRTzFtemc9PSIsInZhbHVlIjoiZ09MZTdMRU9ENDhuUWpldTVCU1dnTmlLVTlrRDNERmdqZTV2MGFiUzhXL0gwZW1MM0lCMG5ZNlV6cVNOQVRxc21pQnA3eUszQ0dVRlZPZ0pzck0rSjZQRVVRRm1QV1JLNTlGTGlJN2VEaTcwUHBQRzl1S0tFYWdBWFBldnZBcmQiLCJtYWMiOiJmZmE0M2M3ZjVmNDZmNDYwYTEyN2UzZTk2MDZlNDk4YjhjZTE0Y2Q0MzY5MTRiNGEyODQ5OGZlOTM5MjdkYTIxIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; bjZkZMHXHk5KCjKnpjNwQoyweBxGVVGvDDl9qvGb=eyJpdiI6IlFQZURIM1pweTR0aDVFdjkxSnoyc0E9PSIsInZhbHVlIjoiZnJyY3BqU25Ra1JsZVNjMXZianVGL2drYkFrbll6QytIM28yMVAwdnJQUGd5ZGdTeHFsN1l5dDNjVzlkeUx6ZWFHeWRGMFppNEQ4eXhrM1ZZaUEwZmg1SzJYTCt4TVhZTDkyMUo1akNJWTdTUzdzN3NZdHN5NEZ1RTBSS0k4eHliQktOejRnMTFmclBvK2Zxb2w4Zlc5MVo2aXd4cUpEQVEydkc3elR5WFVMS1NGamUwYlYvSFYxRUJyR0tVQlR4djdITVBvZFVjRFpPeGx2Qi9lVTRMVDhNUFlObDNZeVV4Y3NnY0VKaWxGT1dHaUdjY21Vd2xmR0xvT3hGaklNQ3Y4OXhZNmFYdGM0eFNoQS9BZS92T1lhbnhqb2UxNUZNMkZXQXNCdEU0WHhYYkk5bWMyNEZXYUdUMEEvQko0TkVHWXp4MHVWMVN3MEUvMk5vdi8ybEhVWXZmWjdlZkxzb3p6WTUzQ1JSZzMwN1ZNa1FDdGRCYWJRY3dXdTNMdlkwWmMrSlV2TC9hdTc3YzQ3bmF4ZVZSOGhuUXdWZlZSQzVLNCtCSzA5d1gxST0iLCJtYWMiOiJkZjU0NzZjMjNmZGM5YWU0NTE4ZTQ5MjU5MmI0ZWUzMmJlNWJlNDlhN2MxNzJkY2Y4NTRmNTAzY2Y3ZDFiYTAyIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7198; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; 3MQJmZWROWYLhKNasy3ELY3wVEmPWoBXfZWmfVzd=eyJpdiI6InFFOHIvS0NaeW94N1J2YTNWNEM5clE9PSIsInZhbHVlIjoiVDUxdlM0d1JPYmsxeXFJb1QvakJraVMyQ05mZWRXQ1NjNTNIaEFsR3ZMYnVPNmRZM2lhRnJ1eVhQTnN0QnpEWDJUaUVIL0ZYUit2YllDQ1hnTzNHRklsdnNNdFdBdDNONVZ4TGVlODVDbHArWVczN1hZUEFXSkJwWWFTQlY1WHZjaml5UHNBZGMva3NnMWFSanl0YkIrQjlwTGZHZENiSjF0cjkrRWlxUEhmZWdRZ3BCS0xuVVB6T21PbFNBNG5HYUVUSGtrODM1N3JZTTI4dHpIOFhWa1ZQMnplZ1pWY1ViWVJ1SWljbUdWNVRUZHUyQlUxTnBFWXZacGZNVUY5aWVPY0J0NUhlNG1Oc0x2YThCWTRydCtQSWNSL1lkNG5DRFRKbUtSc2tzeGhCR2N0KzBmTGFScGtMUEs4TjB2czJkZkVHYVB5TGNwUmpZeFJyU1BJWWN5eWNVNzVIbXNRbklrbXIxWXgyNnFTUVVqY3hsUWRiM3dKWTgrQ2RXa25tekJ4U2ZFa2c4U1lVNGdaNGZBVHRYSjk0UEhRMHJpMWFxampDemxGOW1Daz0iLCJtYWMiOiI1ZDcwNGE5YmVjODZlNmUyMzE3NGVjNTI4OTEzMDYxNGQ5MGMzNDNjMmE2MTgzZjRmYzkyOTRlZWI2YjQ2MmZmIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7198; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; vFHPS492X190aKadHkChqH3XyGwTR1Pn7yFt06zm=eyJpdiI6IjlVZ2FBcHVrYXRWaVRMTXNSd0RPNEE9PSIsInZhbHVlIjoiblFhWXNMMXgzbU9ua1ZJOU04L0w1VXkzS3pyQU9JUEVUMVNEOUNkUGJuM1VoRUJZRE52eUJlaXg0aEkzcDV6enZOUlk5Y2xqMmxCeFlvU0tuS2VKc2lxTTRQbFlLZE9ZRWtkN1R0elBxV3VIay9tcE5VUkx5d1hNWEp2WlVRVXk3bFdBNG56MnJlNFEwQmE5SEZrb0NTTER2Y0xEUEhMTW52OE1qaGtQTzdnTnBmTklNb2ZEYzYyREJ6dUJ5VzREZUhyQzZZQVovdVc3US8zbWxZbEVoMUcrcUFoUEhlNkFHSDFkeThYazJjMUI1azZUZUtqcURYWm9uL3lXMVdFTDNEVzQrNWkwWUU1WDRsQWNtRVpHdlg5VzNjSUlGUjlpVUlGNmYrTUZNKzJUSmx3SDNsYWMwU2xqTjVlcGJvSUZ1ckQ0QjdOL2JUUnJoek05VGRqdWI3V0JGU05mc21JWmlGRldLbGhCeEkwVjA3L1F1UXJTaDNpNjlwNlJGeGlDSWpFb1VzRjRrdXNOdkthdWdyWDQyZlhjSjdZU0VhZzNDeUF2cnJUMElsZz0iLCJtYWMiOiJlMjZjYWI0ZWYwYzlkNWE0MWY3MDBmYTIwY2E1ODkxNmU5Y2VjYzRjOWIwYWQyMThjNGFkMDE4ZGQ4ZDBkMTI2IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7198; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; VU3Gz0tX8z74ggV4H039MZO5AUJqnBOK59TRZV1u=eyJpdiI6ImV2R2h1ckFZb1VZV2lrOW1SQyt3dHc9PSIsInZhbHVlIjoiSmdKdElES3NudnVnZGJXRnhlSE00Y1g5Zmx3dHVpKzd0NmdOSkxseEcxMFNEcmhjaDRlMVc0SldLcElUMUxCSVB2RDJWbjZNS3k4RWRVYzR3Q2FTL3J5NW9Da3Vmc1A5d2hGT0g5bWlJVXpDakEyRGxwRlZzbnhuUnJFcUxjeGgvNFEwcXZLVFpkNGhOK2FMR3duVkhoSzM2TnBQZmtOT0YrVUdHQ0NZZk0xbURWSmhyUm5vS1hDSDFmRy84Z3pNL0Z0S2srM05hdzFIVlgwOVJldzhJVitQdU9RbHlZQnI0eEV1MHhWeHh6ZDArTU9PdTBTMHFYaThuZndnNFltUTZQZFRyL2NoZzNNZ1grd3QxME9PY0RPZ1lIRG9odlIxb0JheFAydm1BUktvVmFXRnBYY2M1MGl5ZFVqQWF3UTE1cTBLbmNvaGFLLzdyZHA2aUhuOXhDVTBGZ0xEYU14cHZPNFpIQUVoejY4V24xNFV1THNrVVIzYTk3QlZvVEpJIiwibWFjIjoiMzY3ZDU1ZGY4ZTIwM2FiOGM0ZWZkMGRlMmU1MWVmNjE3MjkxZDg1ZjE5OWI5NmJhYjYyNjdmNTk3ODNkNGQ2YyIsInRhZyI6IiJ9; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; tcQppMy0jBUrVF2YTWxkEIf4GsM65gCOf6hY7r22=eyJpdiI6IjlNYktZRktpSkNJZHgyMWJJbkRvUWc9PSIsInZhbHVlIjoiaW9zYytNUWZaa1YycUpwRGZMN1duNXlaNmYrU01BdFBSTDZ2MGR0VXhZRTFNbGR5MktNazNTNFpYTHFENCswUGl2OTE0RjI1RjNSMUNpYXZkYkJmam5CRUIzMlNVYVE4U1VENno0Y09QRnpzcFhFdlljd1F2dlhIRzlKczFhQzJiMEZxTis2ckc1ckh6YjA5c211My9FdXV6cGdaVnVYRXdHMVRpbGhPMEJ6YyswREFINTVZdUcwcWNtTm9mL1NqdUtObm1SS1JDNG5IaXBjby9YckpDT0dpMWV1V3ZtWjYvcG43NnNHRDRqcGtXTlVvZ21xZkxSODFBcDVrd3BxYnMvTkdKQ2F0bC9ocllVOTkyYTZvVk5Cb1RIL0Zld2gydlZVNWdkU2lTZnl4QUJ4OEpSbDIrYXU1cDlHRGtiNFljMkVhek5makUzdnBGY0tBeGhZK045WVVhUjM5cU9kN3NyY2M4Z05ueUZMTWZnTGVBVEdqcHAwWWRwNDd0KzF6RUR3ZkxHUFFzYnU1OFZRM3ZVUVhJUT09IiwibWFjIjoiNTNkYzBjZTgxNmZmY2U3Yjk5NmFhMmE1NTI2NDZlYjYwYjMxNjMxNGFhYjA3MTM4YjMxMDViNDQ4Mjk1MGJjNiIsInRhZyI6IiJ9; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6Ijl4UUZ4NGVUOGlwc2ZQaWhKQlYwZ3c9PSIsInZhbHVlIjoiRnIvTW1oZUpXQUkxYmdwd3YwZGZXcUFmTk1NMFkvQTl3bUdiS0oyM1RBbEpYNStPQzZlaFdoUkJEU04xSk9YWlEvWURSVzlvbS9TRlFSVUxXR0RiM3ArOW9seWEycEE0R1EyK1U4d0tCbnNNQXZUQlJ3NUVBMlQ3dVZhN1BYemwiLCJtYWMiOiI5NzIzOGQxMjgwYWEwMjY0MzY2OTFjNGI1MGI0MjMxODBlNTQ1NTU4NzA3MzM2YzUwMGMyN2E2N2E3NWJjNjA1IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:09 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6Ik5ySzA3b00yYnJ5K2FxVy9GVlB5Znc9PSIsInZhbHVlIjoiRGRDaXVPYTJBU0Y1ckcvUlViOGlVc1drbE1Lc1lnRnZBcG1MeTg2am5EUFp0bGJmMXVaT3FWQ0JJWGVoNWdjWmh5eXFZZnBIbCtMaFhuNXBrVUp2eVpubXBFQ2FoNW1MT2tLellaOXgwY0h5Q1hqOGtLVzNkYmJpbWMya3hVdDQiLCJtYWMiOiJmMWM4ZGQwN2ZlZTE5YjcyNGMxNzEyMTc0OTY0MDlhMjdlNjQ2MWU0MDExMmIxMzVlZDQzZjlmZTUyNGZmZWM5IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:09 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; jt41cvNZCynYu7ccvTjycoA5N2qcKgCZ5IGOfwjb=eyJpdiI6Ild0YlBYdDlNZTQ1UWk5aldwd3NOVVE9PSIsInZhbHVlIjoiZ2hIUDNYNXJxaHE4WURWVTNwUE4vWUpSN2VyS1FLYUNDcUpjTDlzVDNicWdpNUJySVRQVUF2dW0vazdCcEo1N1lVeGErMHM3cUNON0d6Tk9LRkxUaDhuSHl0U2lacEhlaWk5NjFUWXE5cEc2V053UERaNC9qWjZhMVVkdlJZTEkwTVEvR0pQanFUdjJFdlJCY1NwV2NKTFd5UUc3bGJobmFGbGJtUm9jUWwxaE44WFFMWGdtTXV3UzdWNmgveENkeWhvNGxlTDJ6ZkFpYWtZekNIWUp3cEoxUy9aRlhZNXlMM0FKUktVMWFQVlM2cXBqdG9jcC9WU3VFRHFTeXRaY2pkbW9idjVmdGFzRy8veGZMeHJzcHREZEh5UXliV0hTUDcrOHhJSHBIMlBKVStzc3c3OW1MWFVVNTBrek5FQ1p1OTdmK2h5MUtaaHUva1Rrak9FZ1RhdTV6U0p4RmtkL1VROHBleklsMjBrSlNRZDRYU3RPR2xjU2RXSkt5cUtQV1dUMVBOWlZVRm1WTDVMSUtOQzRWbWJLaG82bm93eCt1UWhLYk5CaU0vTT0iLCJtYWMiOiIxYTFjZjc5NDZkY2ZlZmIwZmE0YTA0MjJlYjBkYTc5ZDVmM2ViZWE3MTZkODU4YTc3Y2RjNDMwMjU2ZWI5NWYwIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:01 GMT; Max-Age=7192; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; RuiF4ZtNIs7R6xGrmkdschP1SfrNov9MCWol2JKR=eyJpdiI6IkFMUGx5NVNRcUp1K204MGNZWm9sTUE9PSIsInZhbHVlIjoiZnh0R1lDQWpqOS81TTl2UTZzanovNk9wL1ltdWs1SE8rNHJNVVgzWkZTVW54L1pQSzY4LzdZcElLb3puS1NzeEh5VW96cThPSDJob2lySndJS3haVnFQeDQ3dkR0YUtxd2xwbGxncWpEZ1dVU3p0UjNudWMrY21CbWVQaVUvOHpTUnRBQ04yVHpSbnJybkxycFRreXRvSlgzc2pyN2lkSHZra09GVTFtTnBDT1Z6a1l3ZXp1WnFNOWtxYnBoTjJZTHNmUkZtcEtBdisvNXFFblRJb0ZGcUhleTduTHBFNnF6bUw0Ny9NNmZ6T3kzekVjRksraWU4N2Y1MVh6QUo2VjJqTGFPQmd5OWxCYVBwTmVJT2I3WW9NMlJoT2tQdmI3N2Z3aktMbmZSM3hxdm43RTVkVStjR0lNbHRXOW9JUllma2xtdnlnWTNKWkEvSmpFUVN3ZTlhLzl6OWpwT0JoVUJoMy8wUlBwMzdnZGJ3UFlvaTZhNHgyUDc2U004TDNOaTRUOHg4RkJIS1RuODd3RS9FM2t3WW5odmh6TElpcTdwdy9iUUQ2L1poWT0iLCJtYWMiOiIyZjQwNjI0MDhmMjY5ODg1NTQxNjRhOTM4NTNhMjlmODlkYTA2N2M5N2YzZmM1YTM0YmI3ZDA2YjBmMjE1NGE5IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:02 GMT; Max-Age=7193; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; 2BV1L0Arl37pZK1Ro8n19wYlHjgwoikXbzIdT9Bu=eyJpdiI6IkVBRllDei9uYmlDYTVYSi96Z2tONUE9PSIsInZhbHVlIjoibllkcHdmVkNOYjcyTUR2bCtPeHlHdXVEOWRRNldRV0w3eEJuNy8vMHdVZU1zNzdnK3hkc2x5UHVTNUNRbDBhbWo5WXR4L1hYbGJjK2ROdTJwZlZDVkI5VlZGemJBbG9qTmI4Q3NBNHJUVnpBQWl5MFFqYjJlV0NkbFdONFE5c3Iya1BJOUx6SUFyT3VzSXBkb0NPNGdCVDlZK0JNVmg5c09wUDlZY3BnZUhTTWZzSFlUMDNCcVdsSGFXajRqVDBqL1kvUXUyQTdZUVlCNWV4RUtvTUNKbGU1ZDROcm1HbzNzUFNZUklMa3NpTTA5SmUwM2diWW1aaElkNnhRRTdFd0RIWUUrSUlIdHZFS2Y0YUxPeTVNbFJpVEdKTlNUdFQvMm42U1VVWmwzZ3lhcGJCRVJIek0vN1kzblQ4cldqZnVOd01sTDRRR0pXT1M5VnVYeTBkaldSbGVlRmFUUlFOYjF1Ri85aUYzSDRINDFKekNNWXVDZzdrM2FuQlFTL3RhOU0wVnBVeDIzTmRhbnBzYVk4TTVVY0svdjZ6c1hIUWlmV0MrSHNYaDE0WT0iLCJtYWMiOiI1Y2Q3ZDJjZjVkYWQ1YjU4N2JjMjQyMDM0MTgyNzI3MjE0ODkwNTlkZjU2NjBlNjE1YTY5ODExM2NmZWU5YTQ0IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 21:05:02 GMT; Max-Age=7193; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; G9D35xteSSU5VHRHMQ2Lo6EszhvR7yUNozLkwjVP=eyJpdiI6Imo1Ujg4c3BoN0RwcllNTlFjN1RxRlE9PSIsInZhbHVlIjoiZjNnTWZlaTZkcnh2b1lFMU43WGQ1cEJ4Rld1NjdXTlRDak9yVEtNS0hRZmNvY0xJR1JCekkwMnE5ODhhOHIrSlBOQkUwckpHWFpQamFmWmFMYk5YQjNsTnZNZVNuOVd2dnhVRHhXQ2Z1M2VMaEtPNTg1NHptdStpUHVZUXlMQ2FSVXVxTHRtUG50b1c0b3YxY0oyeWw4bmNEZ0RKclFqeXliTW1oVUlKTVZrNC9JQXU4eCt6dFFXSE4vMnhkNFY2MUh4Nnp2YXFoWGFLUHIrWUZHdVJlUVIvZFlQWjF4SGc2ek4rdlFFSVdrUXJIN3VkWXlRUHlWbjQzSFkwdGk3U2tWcWRIVkJCcG9XOGdWajF1RTlMNzZrd3pHVFY1bzBJYnAxcHVVZ2c5Z2tSd2VXZ0VSWEtwYzlOcDVONUwzM3crNU9wazdVazdmajJzWU1nTnFCazJtY3hEZkVjYVBRM1l1SWhOb25aTUttK0FYdkNHaW5waWxWbXRaVjAzSWR3IiwibWFjIjoiNzFiYjYzODE3NDQ0NGRlYzIxMTBlZDc0YWVlMjFjZTVmZmJmMTU5MTE4OWEyNWQwMWUzYjkwNTdiMWI1NzY0ZiIsInRhZyI6IiJ9; expires=Tue, 07-Feb-2023 21:05:09 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax; x9NlFoBE9esGVLnj01ALRM6DHE1NrIw0vk5TKUUJ=eyJpdiI6InBpaUR6cFJlZ09aWVg4R0tvMmJlM2c9PSIsInZhbHVlIjoiMzlSZW9Nd3QyRHMzeU43ZVBPU0h0NU9MV1J3Qy9hNEx2NVd6dnM0Z3dKdmZpQ1htd05YMEtMaEJtZ0Ftd1JERDNQM01QeDI0Sk1EbHdYaVVJb0M5U3BlMmNqb2ErSzdEMWN2L1ovcWxFQTRzSWhrR2Z2QjdmckN5V2RoRzdCRTV1TGdoRldWb0dEZVB4MXF4YTcySkJhTG9JQkxKcTF3ZFVldmhCUXBTWVMvcW5uYlNQcGJHRHUzSHBnbzBRTmdYSXY3c05xcEF2SjNvSEE3OVhXVWRGeFN6MWFGNm9VYUZ5dndRSUhrVVg1c29Id1pWTFc0Qnp0cmVnS3FUelBrY2c2WjNwZlh1anAyN0VjS2xvbzhpSGNTRXFabjRITWpGY2daczNrelQ5K2FFSFRYNHZQYzMxa1R1Vk5zOFlLNWFrK0F2WGtXTytUeVdkWkI3QVRoVFl5ZDVpTXg0NFhrRUJUdTRlc3loM053Q3pzNXZFOGFLc1Y0cWttODBRblluSnFYS1dsWXZPZTVpd0ZjRGlJK2FiUT09IiwibWFjIjoiMGJjMjI4Zjk1OWZlNGY4ODJlMTEzYmNhMjNiZGUyNmI5MmI0YzRmN2U2ZTc5NzFiNzQ0YjE1NDgzOTA2YWNhNiIsInRhZyI6IiJ9; expires=Tue, 07-Feb-2023 21:05:09 GMT; Max-Age=7200; path=/; domain=ceanx.lubomedia.de; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -4643,23 +4124,6 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/cost_estimation/1"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -4773,12 +4237,12 @@ vary: Origin
     --header "Accept: application/json" \
     --data "{
     \"costEstimationPosition\": {
-        \"title\": \"inventore\",
-        \"description\": \"Laboriosam deleniti illum quasi exercitationem voluptatem accusantium.\",
-        \"component\": \"dolores\",
-        \"comment\": \"et\",
-        \"minimum_estimate\": \"placeat\",
-        \"maximum_estimate\": \"totam\"
+        \"title\": \"et\",
+        \"description\": \"Molestiae impedit voluptatum ut qui.\",
+        \"component\": \"totam\",
+        \"comment\": \"dolor\",
+        \"minimum_estimate\": \"facilis\",
+        \"maximum_estimate\": \"ea\"
     }
 }"
 </code></pre></div>
@@ -4797,12 +4261,12 @@ const headers = {
 
 let body = {
     "costEstimationPosition": {
-        "title": "inventore",
-        "description": "Laboriosam deleniti illum quasi exercitationem voluptatem accusantium.",
-        "component": "dolores",
-        "comment": "et",
-        "minimum_estimate": "placeat",
-        "maximum_estimate": "totam"
+        "title": "et",
+        "description": "Molestiae impedit voluptatum ut qui.",
+        "component": "totam",
+        "comment": "dolor",
+        "minimum_estimate": "facilis",
+        "maximum_estimate": "ea"
     }
 };
 
@@ -4825,47 +4289,18 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'costEstimationPosition' =&gt; [
-                'title' =&gt; 'inventore',
-                'description' =&gt; 'Laboriosam deleniti illum quasi exercitationem voluptatem accusantium.',
-                'component' =&gt; 'dolores',
-                'comment' =&gt; 'et',
-                'minimum_estimate' =&gt; 'placeat',
-                'maximum_estimate' =&gt; 'totam',
+                'title' =&gt; 'et',
+                'description' =&gt; 'Molestiae impedit voluptatum ut qui.',
+                'component' =&gt; 'totam',
+                'comment' =&gt; 'dolor',
+                'minimum_estimate' =&gt; 'facilis',
+                'maximum_estimate' =&gt; 'ea',
             ],
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/new"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "costEstimationPosition": {
-        "title": "inventore",
-        "description": "Laboriosam deleniti illum quasi exercitationem voluptatem accusantium.",
-        "component": "dolores",
-        "comment": "et",
-        "minimum_estimate": "placeat",
-        "maximum_estimate": "totam"
-    }
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -4945,10 +4380,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="costEstimationPosition.title"                data-endpoint="POSTapi-cost_estimation_positions-new"
-               value="inventore"
+               value="et"
                data-component="body">
     <br>
-<p>Title Example: <code>inventore</code></p>
+<p>Title Example: <code>et</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -4956,10 +4391,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="costEstimationPosition.description"                data-endpoint="POSTapi-cost_estimation_positions-new"
-               value="Laboriosam deleniti illum quasi exercitationem voluptatem accusantium."
+               value="Molestiae impedit voluptatum ut qui."
                data-component="body">
     <br>
-<p>Example: <code>Laboriosam deleniti illum quasi exercitationem voluptatem accusantium.</code></p>
+<p>Example: <code>Molestiae impedit voluptatum ut qui.</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>component</code></b>&nbsp;&nbsp;
@@ -4967,10 +4402,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="costEstimationPosition.component"                data-endpoint="POSTapi-cost_estimation_positions-new"
-               value="dolores"
+               value="totam"
                data-component="body">
     <br>
-<p>Component/Group Example: <code>dolores</code></p>
+<p>Component/Group Example: <code>totam</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>comment</code></b>&nbsp;&nbsp;
@@ -4978,10 +4413,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="costEstimationPosition.comment"                data-endpoint="POSTapi-cost_estimation_positions-new"
-               value="et"
+               value="dolor"
                data-component="body">
     <br>
-<p>Comment Example: <code>et</code></p>
+<p>Comment Example: <code>dolor</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>minimum_estimate</code></b>&nbsp;&nbsp;
@@ -4989,10 +4424,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="costEstimationPosition.minimum_estimate"                data-endpoint="POSTapi-cost_estimation_positions-new"
-               value="placeat"
+               value="facilis"
                data-component="body">
     <br>
-<p>Minimum Estimate (as a comma-separated decimal or int) Examples: &quot;10,75&quot; or 10 Example: <code>placeat</code></p>
+<p>Minimum Estimate (as a comma-separated decimal or int) Examples: &quot;10,75&quot; or 10 Example: <code>facilis</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>maximum_estimate</code></b>&nbsp;&nbsp;
@@ -5000,10 +4435,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="costEstimationPosition.maximum_estimate"                data-endpoint="POSTapi-cost_estimation_positions-new"
-               value="totam"
+               value="ea"
                data-component="body">
     <br>
-<p>Maximum Estimate (as a comma-separated decimal or int) Examples: &quot;10,75&quot; or 10 Example: <code>totam</code></p>
+<p>Maximum Estimate (as a comma-separated decimal or int) Examples: &quot;10,75&quot; or 10 Example: <code>ea</code></p>
                     </div>
                                     </details>
         </div>
@@ -5029,13 +4464,13 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"costEstimationPosition\": {
-        \"id\": \"corrupti\",
-        \"title\": \"dignissimos\",
-        \"description\": \"Odit et doloribus non.\",
-        \"component\": \"explicabo\",
-        \"comment\": \"occaecati\",
-        \"minimum_estimate\": \"ut\",
-        \"maximum_estimate\": \"itaque\"
+        \"id\": \"culpa\",
+        \"title\": \"id\",
+        \"description\": \"Sint sint omnis quo rem repudiandae.\",
+        \"component\": \"vel\",
+        \"comment\": \"aliquid\",
+        \"minimum_estimate\": \"ea\",
+        \"maximum_estimate\": \"quaerat\"
     }
 }"
 </code></pre></div>
@@ -5054,13 +4489,13 @@ const headers = {
 
 let body = {
     "costEstimationPosition": {
-        "id": "corrupti",
-        "title": "dignissimos",
-        "description": "Odit et doloribus non.",
-        "component": "explicabo",
-        "comment": "occaecati",
-        "minimum_estimate": "ut",
-        "maximum_estimate": "itaque"
+        "id": "culpa",
+        "title": "id",
+        "description": "Sint sint omnis quo rem repudiandae.",
+        "component": "vel",
+        "comment": "aliquid",
+        "minimum_estimate": "ea",
+        "maximum_estimate": "quaerat"
     }
 };
 
@@ -5083,49 +4518,19 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'costEstimationPosition' =&gt; [
-                'id' =&gt; 'corrupti',
-                'title' =&gt; 'dignissimos',
-                'description' =&gt; 'Odit et doloribus non.',
-                'component' =&gt; 'explicabo',
-                'comment' =&gt; 'occaecati',
-                'minimum_estimate' =&gt; 'ut',
-                'maximum_estimate' =&gt; 'itaque',
+                'id' =&gt; 'culpa',
+                'title' =&gt; 'id',
+                'description' =&gt; 'Sint sint omnis quo rem repudiandae.',
+                'component' =&gt; 'vel',
+                'comment' =&gt; 'aliquid',
+                'minimum_estimate' =&gt; 'ea',
+                'maximum_estimate' =&gt; 'quaerat',
             ],
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/edit"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "costEstimationPosition": {
-        "id": "corrupti",
-        "title": "dignissimos",
-        "description": "Odit et doloribus non.",
-        "component": "explicabo",
-        "comment": "occaecati",
-        "minimum_estimate": "ut",
-        "maximum_estimate": "itaque"
-    }
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -5205,10 +4610,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="costEstimationPosition.id"                data-endpoint="POSTapi-cost_estimation_positions-edit"
-               value="corrupti"
+               value="culpa"
                data-component="body">
     <br>
-<p>ID Example: <code>corrupti</code></p>
+<p>ID Example: <code>culpa</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
@@ -5216,10 +4621,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="costEstimationPosition.title"                data-endpoint="POSTapi-cost_estimation_positions-edit"
-               value="dignissimos"
+               value="id"
                data-component="body">
     <br>
-<p>Title Example: <code>dignissimos</code></p>
+<p>Title Example: <code>id</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -5227,10 +4632,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="costEstimationPosition.description"                data-endpoint="POSTapi-cost_estimation_positions-edit"
-               value="Odit et doloribus non."
+               value="Sint sint omnis quo rem repudiandae."
                data-component="body">
     <br>
-<p>Example: <code>Odit et doloribus non.</code></p>
+<p>Example: <code>Sint sint omnis quo rem repudiandae.</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>component</code></b>&nbsp;&nbsp;
@@ -5238,10 +4643,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="costEstimationPosition.component"                data-endpoint="POSTapi-cost_estimation_positions-edit"
-               value="explicabo"
+               value="vel"
                data-component="body">
     <br>
-<p>Component/Group Example: <code>explicabo</code></p>
+<p>Component/Group Example: <code>vel</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>comment</code></b>&nbsp;&nbsp;
@@ -5249,10 +4654,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="costEstimationPosition.comment"                data-endpoint="POSTapi-cost_estimation_positions-edit"
-               value="occaecati"
+               value="aliquid"
                data-component="body">
     <br>
-<p>Comment Example: <code>occaecati</code></p>
+<p>Comment Example: <code>aliquid</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>minimum_estimate</code></b>&nbsp;&nbsp;
@@ -5260,10 +4665,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="costEstimationPosition.minimum_estimate"                data-endpoint="POSTapi-cost_estimation_positions-edit"
-               value="ut"
+               value="ea"
                data-component="body">
     <br>
-<p>Minimum Estimate (as a comma-separated decimal or int) Examples: &quot;10,75&quot; or 10 Example: <code>ut</code></p>
+<p>Minimum Estimate (as a comma-separated decimal or int) Examples: &quot;10,75&quot; or 10 Example: <code>ea</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>maximum_estimate</code></b>&nbsp;&nbsp;
@@ -5271,10 +4676,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="costEstimationPosition.maximum_estimate"                data-endpoint="POSTapi-cost_estimation_positions-edit"
-               value="itaque"
+               value="quaerat"
                data-component="body">
     <br>
-<p>Maximum Estimate (as a comma-separated decimal or int) Examples: &quot;10,75&quot; or 10 Example: <code>itaque</code></p>
+<p>Maximum Estimate (as a comma-separated decimal or int) Examples: &quot;10,75&quot; or 10 Example: <code>quaerat</code></p>
                     </div>
                                     </details>
         </div>
@@ -5300,7 +4705,7 @@ stored CeanX Cost Estimation Positions.</p>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"text\": \"qui\"
+    \"text\": \"enim\"
 }"
 </code></pre></div>
 
@@ -5317,7 +4722,7 @@ const headers = {
 };
 
 let body = {
-    "text": "qui"
+    "text": "enim"
 };
 
 fetch(url, {
@@ -5338,34 +4743,12 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'text' =&gt; 'qui',
+            'text' =&gt; 'enim',
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/search"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "text": "qui"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -5436,10 +4819,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="text"                data-endpoint="POSTapi-cost_estimation_positions-search"
-               value="qui"
+               value="enim"
                data-component="body">
     <br>
-<p>Search String Example: <code>qui</code></p>
+<p>Search String Example: <code>enim</code></p>
         </div>
         </form>
 
@@ -5457,7 +4840,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/veritatis" \
+    --get "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/illo" \
     --header "X-CSRF-TOKEN: {TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -5465,7 +4848,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/veritatis"
+    "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/illo"
 );
 
 const headers = {
@@ -5483,7 +4866,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/veritatis',
+    'https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/illo',
     [
         'headers' =&gt; [
             'X-CSRF-TOKEN' =&gt; '{TOKEN}',
@@ -5494,23 +4877,6 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/veritatis"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -5597,10 +4963,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="GETapi-cost_estimation_positions--id-"
-               value="veritatis"
+               value="illo"
                data-component="url">
     <br>
-<p>The ID of the cost estimation position. Example: <code>veritatis</code></p>
+<p>The ID of the cost estimation position. Example: <code>illo</code></p>
             </div>
                     </form>
 
@@ -5618,7 +4984,7 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/tempore" \
+    "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/voluptates" \
     --header "X-CSRF-TOKEN: {TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -5626,7 +4992,7 @@ vary: Origin
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/tempore"
+    "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/voluptates"
 );
 
 const headers = {
@@ -5644,7 +5010,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/tempore',
+    'https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/voluptates',
     [
         'headers' =&gt; [
             'X-CSRF-TOKEN' =&gt; '{TOKEN}',
@@ -5655,23 +5021,6 @@ $response = $client-&gt;delete(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/tempore"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -5742,10 +5091,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="DELETEapi-cost_estimation_positions--id-"
-               value="tempore"
+               value="voluptates"
                data-component="url">
     <br>
-<p>The ID of the cost estimation position. Example: <code>tempore</code></p>
+<p>The ID of the cost estimation position. Example: <code>voluptates</code></p>
             </div>
                     </form>
 
@@ -5769,8 +5118,8 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"object\": {
-        \"old_name\": \"provident\",
-        \"new_name\": \"quia\"
+        \"old_name\": \"recusandae\",
+        \"new_name\": \"aut\"
     }
 }"
 </code></pre></div>
@@ -5789,8 +5138,8 @@ const headers = {
 
 let body = {
     "object": {
-        "old_name": "provident",
-        "new_name": "quia"
+        "old_name": "recusandae",
+        "new_name": "aut"
     }
 };
 
@@ -5813,39 +5162,14 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'object' =&gt; [
-                'old_name' =&gt; 'provident',
-                'new_name' =&gt; 'quia',
+                'old_name' =&gt; 'recusandae',
+                'new_name' =&gt; 'aut',
             ],
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/cost_estimation_positions/rename_component"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "object": {
-        "old_name": "provident",
-        "new_name": "quia"
-    }
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -5925,10 +5249,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="object.old_name"                data-endpoint="POSTapi-cost_estimation_positions-rename_component"
-               value="provident"
+               value="recusandae"
                data-component="body">
     <br>
-<p>Old Name Example: <code>provident</code></p>
+<p>Old Name Example: <code>recusandae</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>new_name</code></b>&nbsp;&nbsp;
@@ -5936,10 +5260,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="object.new_name"                data-endpoint="POSTapi-cost_estimation_positions-rename_component"
-               value="quia"
+               value="aut"
                data-component="body">
     <br>
-<p>New Name Example: <code>quia</code></p>
+<p>New Name Example: <code>aut</code></p>
                     </div>
                                     </details>
         </div>
@@ -5969,9 +5293,9 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"jiraConnection\": {
-        \"host\": \"ea\",
-        \"email\": \"dickens.jules@example.com\",
-        \"api_token\": \"ratione\"
+        \"host\": \"aliquid\",
+        \"email\": \"geovany.murazik@example.com\",
+        \"api_token\": \"expedita\"
     }
 }"
 </code></pre></div>
@@ -5990,9 +5314,9 @@ const headers = {
 
 let body = {
     "jiraConnection": {
-        "host": "ea",
-        "email": "dickens.jules@example.com",
-        "api_token": "ratione"
+        "host": "aliquid",
+        "email": "geovany.murazik@example.com",
+        "api_token": "expedita"
     }
 };
 
@@ -6015,41 +5339,15 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'jiraConnection' =&gt; [
-                'host' =&gt; 'ea',
-                'email' =&gt; 'dickens.jules@example.com',
-                'api_token' =&gt; 'ratione',
+                'host' =&gt; 'aliquid',
+                'email' =&gt; 'geovany.murazik@example.com',
+                'api_token' =&gt; 'expedita',
             ],
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/jira_connections/test"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "jiraConnection": {
-        "host": "ea",
-        "email": "dickens.jules@example.com",
-        "api_token": "ratione"
-    }
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -6129,10 +5427,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="jiraConnection.host"                data-endpoint="POSTapi-jira_connections-test"
-               value="ea"
+               value="aliquid"
                data-component="body">
     <br>
-<p>Host Example: <code>ea</code></p>
+<p>Host Example: <code>aliquid</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -6140,10 +5438,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="jiraConnection.email"                data-endpoint="POSTapi-jira_connections-test"
-               value="dickens.jules@example.com"
+               value="geovany.murazik@example.com"
                data-component="body">
     <br>
-<p>E-Mail Example: <code>dickens.jules@example.com</code></p>
+<p>E-Mail Example: <code>geovany.murazik@example.com</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>api_token</code></b>&nbsp;&nbsp;
@@ -6151,10 +5449,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="jiraConnection.api_token"                data-endpoint="POSTapi-jira_connections-test"
-               value="ratione"
+               value="expedita"
                data-component="body">
     <br>
-<p>API Token Example: <code>ratione</code></p>
+<p>API Token Example: <code>expedita</code></p>
                     </div>
                                     </details>
         </div>
@@ -6180,11 +5478,11 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"jiraConnection\": {
-        \"title\": \"sint\",
-        \"description\": \"Nesciunt commodi inventore pariatur deleniti molestiae.\",
-        \"host\": \"quam\",
-        \"email\": \"katrine82@example.org\",
-        \"api_token\": \"eos\"
+        \"title\": \"est\",
+        \"description\": \"Rerum occaecati incidunt eaque placeat dolore commodi aliquid.\",
+        \"host\": \"iste\",
+        \"email\": \"nikko.keebler@example.com\",
+        \"api_token\": \"maiores\"
     }
 }"
 </code></pre></div>
@@ -6203,11 +5501,11 @@ const headers = {
 
 let body = {
     "jiraConnection": {
-        "title": "sint",
-        "description": "Nesciunt commodi inventore pariatur deleniti molestiae.",
-        "host": "quam",
-        "email": "katrine82@example.org",
-        "api_token": "eos"
+        "title": "est",
+        "description": "Rerum occaecati incidunt eaque placeat dolore commodi aliquid.",
+        "host": "iste",
+        "email": "nikko.keebler@example.com",
+        "api_token": "maiores"
     }
 };
 
@@ -6230,45 +5528,17 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'jiraConnection' =&gt; [
-                'title' =&gt; 'sint',
-                'description' =&gt; 'Nesciunt commodi inventore pariatur deleniti molestiae.',
-                'host' =&gt; 'quam',
-                'email' =&gt; 'katrine82@example.org',
-                'api_token' =&gt; 'eos',
+                'title' =&gt; 'est',
+                'description' =&gt; 'Rerum occaecati incidunt eaque placeat dolore commodi aliquid.',
+                'host' =&gt; 'iste',
+                'email' =&gt; 'nikko.keebler@example.com',
+                'api_token' =&gt; 'maiores',
             ],
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/jira_connections/new"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "jiraConnection": {
-        "title": "sint",
-        "description": "Nesciunt commodi inventore pariatur deleniti molestiae.",
-        "host": "quam",
-        "email": "katrine82@example.org",
-        "api_token": "eos"
-    }
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -6348,10 +5618,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="jiraConnection.title"                data-endpoint="POSTapi-jira_connections-new"
-               value="sint"
+               value="est"
                data-component="body">
     <br>
-<p>Title Example: <code>sint</code></p>
+<p>Title Example: <code>est</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -6359,10 +5629,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="jiraConnection.description"                data-endpoint="POSTapi-jira_connections-new"
-               value="Nesciunt commodi inventore pariatur deleniti molestiae."
+               value="Rerum occaecati incidunt eaque placeat dolore commodi aliquid."
                data-component="body">
     <br>
-<p>Description Example: <code>Nesciunt commodi inventore pariatur deleniti molestiae.</code></p>
+<p>Description Example: <code>Rerum occaecati incidunt eaque placeat dolore commodi aliquid.</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>host</code></b>&nbsp;&nbsp;
@@ -6370,10 +5640,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="jiraConnection.host"                data-endpoint="POSTapi-jira_connections-new"
-               value="quam"
+               value="iste"
                data-component="body">
     <br>
-<p>Host Example: <code>quam</code></p>
+<p>Host Example: <code>iste</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -6381,10 +5651,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="jiraConnection.email"                data-endpoint="POSTapi-jira_connections-new"
-               value="katrine82@example.org"
+               value="nikko.keebler@example.com"
                data-component="body">
     <br>
-<p>E-Mail Example: <code>katrine82@example.org</code></p>
+<p>E-Mail Example: <code>nikko.keebler@example.com</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>api_token</code></b>&nbsp;&nbsp;
@@ -6392,10 +5662,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="jiraConnection.api_token"                data-endpoint="POSTapi-jira_connections-new"
-               value="eos"
+               value="maiores"
                data-component="body">
     <br>
-<p>API Token Example: <code>eos</code></p>
+<p>API Token Example: <code>maiores</code></p>
                     </div>
                                     </details>
         </div>
@@ -6452,23 +5722,6 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/jira_connections/all"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -6601,23 +5854,6 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/jira_connections/1"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -6763,23 +5999,6 @@ $response = $client-&gt;delete(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/jira_connections/1"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-DELETEapi-jira_connections--id-">
@@ -6876,9 +6095,9 @@ stored Jira Connections.</p>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"text\": \"fuga\",
+    \"text\": \"quos\",
     \"components\": [
-        \"at\"
+        \"rerum\"
     ]
 }"
 </code></pre></div>
@@ -6896,9 +6115,9 @@ const headers = {
 };
 
 let body = {
-    "text": "fuga",
+    "text": "quos",
     "components": [
-        "at"
+        "rerum"
     ]
 };
 
@@ -6920,40 +6139,15 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'text' =&gt; 'fuga',
+            'text' =&gt; 'quos',
             'components' =&gt; [
-                'at',
+                'rerum',
             ],
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/jira_connections/search"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "text": "fuga",
-    "components": [
-        "at"
-    ]
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -7024,10 +6218,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="text"                data-endpoint="POSTapi-jira_connections-search"
-               value="fuga"
+               value="quos"
                data-component="body">
     <br>
-<p>Search String Example: <code>fuga</code></p>
+<p>Search String Example: <code>quos</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>components</code></b>&nbsp;&nbsp;
@@ -7099,23 +6293,6 @@ $response = $client-&gt;post(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/setting/toggle_registration"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -7230,22 +6407,6 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/setting/register_allowed"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-GETapi-setting-register_allowed">
@@ -7339,9 +6500,9 @@ vary: Origin
     --header "Accept: application/json" \
     --data "{
     \"troiConnection\": {
-        \"host\": \"labore\",
-        \"username\": \"dolorum\",
-        \"password\": \"?Arhv}\'+m_l|uP57s\"
+        \"host\": \"tempore\",
+        \"username\": \"animi\",
+        \"password\": \"U)?MDQ`.B@&gt;dDTx}YX\"
     }
 }"
 </code></pre></div>
@@ -7360,9 +6521,9 @@ const headers = {
 
 let body = {
     "troiConnection": {
-        "host": "labore",
-        "username": "dolorum",
-        "password": "?Arhv}'+m_l|uP57s"
+        "host": "tempore",
+        "username": "animi",
+        "password": "U)?MDQ`.B@&gt;dDTx}YX"
     }
 };
 
@@ -7385,41 +6546,15 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'troiConnection' =&gt; [
-                'host' =&gt; 'labore',
-                'username' =&gt; 'dolorum',
-                'password' =&gt; '?Arhv}\'+m_l|uP57s',
+                'host' =&gt; 'tempore',
+                'username' =&gt; 'animi',
+                'password' =&gt; 'U)?MDQ`.B@&gt;dDTx}YX',
             ],
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/troi_connections/test"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "troiConnection": {
-        "host": "labore",
-        "username": "dolorum",
-        "password": "?Arhv}'+m_l|uP57s"
-    }
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -7499,10 +6634,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="troiConnection.host"                data-endpoint="POSTapi-troi_connections-test"
-               value="labore"
+               value="tempore"
                data-component="body">
     <br>
-<p>Host Example: <code>labore</code></p>
+<p>Host Example: <code>tempore</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>username</code></b>&nbsp;&nbsp;
@@ -7510,10 +6645,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="troiConnection.username"                data-endpoint="POSTapi-troi_connections-test"
-               value="dolorum"
+               value="animi"
                data-component="body">
     <br>
-<p>Username Example: <code>dolorum</code></p>
+<p>Username Example: <code>animi</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -7521,10 +6656,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="troiConnection.password"                data-endpoint="POSTapi-troi_connections-test"
-               value="?Arhv}'+m_l|uP57s"
+               value="U)?MDQ`.B@>dDTx}YX"
                data-component="body">
     <br>
-<p>Password Example: <code>?Arhv}'+m_l|uP57s</code></p>
+<p>Password Example: <code>U)?MDQ</code>.B@&gt;dDTx}YX`</p>
                     </div>
                                     </details>
         </div>
@@ -7550,11 +6685,11 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"troiConnection\": {
-        \"title\": \"hic\",
-        \"description\": \"Illum ut optio autem quia nemo.\",
-        \"host\": \"nam\",
-        \"username\": \"vel\",
-        \"password\": \",&gt;QS)cRGAh\"
+        \"title\": \"odit\",
+        \"description\": \"Blanditiis exercitationem assumenda eos beatae non.\",
+        \"host\": \"sit\",
+        \"username\": \"nobis\",
+        \"password\": \"-Z5B+wie:QTzGe9I^p\"
     }
 }"
 </code></pre></div>
@@ -7573,11 +6708,11 @@ const headers = {
 
 let body = {
     "troiConnection": {
-        "title": "hic",
-        "description": "Illum ut optio autem quia nemo.",
-        "host": "nam",
-        "username": "vel",
-        "password": ",&gt;QS)cRGAh"
+        "title": "odit",
+        "description": "Blanditiis exercitationem assumenda eos beatae non.",
+        "host": "sit",
+        "username": "nobis",
+        "password": "-Z5B+wie:QTzGe9I^p"
     }
 };
 
@@ -7600,45 +6735,17 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'troiConnection' =&gt; [
-                'title' =&gt; 'hic',
-                'description' =&gt; 'Illum ut optio autem quia nemo.',
-                'host' =&gt; 'nam',
-                'username' =&gt; 'vel',
-                'password' =&gt; ',&gt;QS)cRGAh',
+                'title' =&gt; 'odit',
+                'description' =&gt; 'Blanditiis exercitationem assumenda eos beatae non.',
+                'host' =&gt; 'sit',
+                'username' =&gt; 'nobis',
+                'password' =&gt; '-Z5B+wie:QTzGe9I^p',
             ],
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/troi_connections/new"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "troiConnection": {
-        "title": "hic",
-        "description": "Illum ut optio autem quia nemo.",
-        "host": "nam",
-        "username": "vel",
-        "password": ",&gt;QS)cRGAh"
-    }
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -7718,10 +6825,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="troiConnection.title"                data-endpoint="POSTapi-troi_connections-new"
-               value="hic"
+               value="odit"
                data-component="body">
     <br>
-<p>Title Example: <code>hic</code></p>
+<p>Title Example: <code>odit</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -7729,10 +6836,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="troiConnection.description"                data-endpoint="POSTapi-troi_connections-new"
-               value="Illum ut optio autem quia nemo."
+               value="Blanditiis exercitationem assumenda eos beatae non."
                data-component="body">
     <br>
-<p>Description Example: <code>Illum ut optio autem quia nemo.</code></p>
+<p>Description Example: <code>Blanditiis exercitationem assumenda eos beatae non.</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>host</code></b>&nbsp;&nbsp;
@@ -7740,10 +6847,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="troiConnection.host"                data-endpoint="POSTapi-troi_connections-new"
-               value="nam"
+               value="sit"
                data-component="body">
     <br>
-<p>Host Example: <code>nam</code></p>
+<p>Host Example: <code>sit</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>username</code></b>&nbsp;&nbsp;
@@ -7751,10 +6858,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="troiConnection.username"                data-endpoint="POSTapi-troi_connections-new"
-               value="vel"
+               value="nobis"
                data-component="body">
     <br>
-<p>Username Example: <code>vel</code></p>
+<p>Username Example: <code>nobis</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -7762,10 +6869,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="troiConnection.password"                data-endpoint="POSTapi-troi_connections-new"
-               value=",>QS)cRGAh"
+               value="-Z5B+wie:QTzGe9I^p"
                data-component="body">
     <br>
-<p>Password Example: <code>,&gt;QS)cRGAh</code></p>
+<p>Password Example: <code>-Z5B+wie:QTzGe9I^p</code></p>
                     </div>
                                     </details>
         </div>
@@ -7822,23 +6929,6 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/troi_connections/all"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -7971,23 +7061,6 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/troi_connections/1"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -8133,23 +7206,6 @@ $response = $client-&gt;delete(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
 
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/troi_connections/1"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
 </span>
 
 <span id="example-responses-DELETEapi-troi_connections--id-">
@@ -8246,7 +7302,7 @@ stored Troi Connections.</p>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"text\": \"vel\"
+    \"text\": \"sed\"
 }"
 </code></pre></div>
 
@@ -8263,7 +7319,7 @@ const headers = {
 };
 
 let body = {
-    "text": "vel"
+    "text": "sed"
 };
 
 fetch(url, {
@@ -8284,34 +7340,12 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'text' =&gt; 'vel',
+            'text' =&gt; 'sed',
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/troi_connections/search"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "text": "vel"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -8382,10 +7416,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="text"                data-endpoint="POSTapi-troi_connections-search"
-               value="vel"
+               value="sed"
                data-component="body">
     <br>
-<p>Search String Example: <code>vel</code></p>
+<p>Search String Example: <code>sed</code></p>
         </div>
         </form>
 
@@ -8444,23 +7478,6 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://backend.ceanx.lubomedia.de/api/users/latest"
-);
-
-const headers = {
-    "X-CSRF-TOKEN": "{TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
@@ -8551,7 +7568,6 @@ vary: Origin
                                                         <button type="button" class="lang-button" data-language-name="bash">bash</button>
                                                         <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
                                                         <button type="button" class="lang-button" data-language-name="php">php</button>
-                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
                             </div>
             </div>
 </div>
