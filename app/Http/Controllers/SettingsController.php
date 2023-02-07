@@ -53,7 +53,7 @@ class SettingsController extends Controller
     }
 
     /**
-     * Get Registration Feature Stauts.
+     * Get Registration Feature Status.
      *
      * This endpoint allows you to see if the Registration-feature is enabled.
      * If returns 0, the feature is disabled. If returns 1, the feature is enabled.

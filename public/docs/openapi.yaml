@@ -94,7 +94,7 @@ paths:
                     title:
                       type: string
                       description: Title
-                      example: voluptatem
+                      example: corporis
               required:
                 - Component
   '/api/components/{id}':
@@ -265,19 +265,19 @@ paths:
                     title:
                       type: string
                       description: Title
-                      example: neque
+                      example: non
                     description:
                       type: Description
                       description: ''
-                      example: 'Odio aut doloribus aliquid beatae enim fugit iste.'
+                      example: 'Amet vitae animi natus veniam quod ratione.'
                     unit:
                       type: string
                       description: Unit
-                      example: assumenda
+                      example: quisquam
                     unit_rate:
                       type: string
                       description: 'Unit Rate'
-                      example: blanditiis
+                      example: est
               required:
                 - costEstimation
   /api/cost_estimations/edit:
@@ -325,23 +325,23 @@ paths:
                     id:
                       type: string
                       description: ID
-                      example: consequatur
+                      example: fugit
                     title:
                       type: string
                       description: Title
-                      example: dicta
+                      example: est
                     description:
                       type: Description
                       description: ''
-                      example: 'Nihil labore similique reiciendis ea.'
+                      example: 'Ipsum et earum a ut saepe quibusdam.'
                     unit:
                       type: string
                       description: Unit
-                      example: eligendi
+                      example: occaecati
                     unit_rate:
                       type: string
                       description: 'Unit Rate'
-                      example: quia
+                      example: eveniet
               required:
                 - costEstimation
   /api/cost_estimations/duplicate:
@@ -389,7 +389,7 @@ paths:
                     cost_estimation_id:
                       type: string
                       description: ID
-                      example: neque
+                      example: et
               required:
                 - costEstimation
   '/api/cost_estimations/{id}':
@@ -505,11 +505,11 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: saul07@example.net
+                  example: weston93@example.com
                 password:
                   type: string
                   description: ''
-                  example: '_I!b)Dq%&rsDih<f|s#='
+                  example: 'G|tZ;(0$,J].O?e^h;'
               required:
                 - email
                 - password
@@ -595,11 +595,11 @@ paths:
                 token:
                   type: string
                   description: ''
-                  example: ullam
+                  example: doloremque
                 password:
                   type: string
                   description: ''
-                  example: molestias
+                  example: ut
               required:
                 - token
                 - password
@@ -669,7 +669,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the verify.'
-        example: corrupti
+        example: porro
         required: true
         schema:
           type: string
@@ -677,7 +677,7 @@ paths:
         in: path
         name: hash
         description: ''
-        example: iste
+        example: sed
         required: true
         schema:
           type: string
@@ -908,7 +908,7 @@ paths:
                 solution:
                   type: string
                   description: ''
-                  example: tenetur
+                  example: ex
                 parameters:
                   type: object
                   description: ''
@@ -950,15 +950,15 @@ paths:
                 theme:
                   type: string
                   description: 'Must be one of <code>light</code>, <code>dark</code>, or <code>auto</code>.'
-                  example: dark
+                  example: auto
                 editor:
                   type: string
                   description: ''
-                  example: ducimus
+                  example: aspernatur
                 hide_solutions:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - theme
                 - editor
@@ -1163,27 +1163,27 @@ paths:
                     title:
                       type: string
                       description: Title
-                      example: et
+                      example: qui
                     description:
                       type: Description
                       description: ''
-                      example: 'Molestiae impedit voluptatum ut qui.'
+                      example: 'Ut quia non animi provident cupiditate.'
                     component:
                       type: string
                       description: Component/Group
-                      example: totam
+                      example: accusantium
                     comment:
                       type: string
                       description: Comment
-                      example: dolor
+                      example: laboriosam
                     minimum_estimate:
                       type: string
                       description: 'Minimum Estimate (as a comma-separated decimal or int) Examples: "10,75" or 10'
-                      example: facilis
+                      example: vel
                     maximum_estimate:
                       type: string
                       description: 'Maximum Estimate (as a comma-separated decimal or int) Examples: "10,75" or 10'
-                      example: ea
+                      example: exercitationem
               required:
                 - costEstimationPosition
   /api/cost_estimation_positions/edit:
@@ -1231,31 +1231,31 @@ paths:
                     id:
                       type: string
                       description: ID
-                      example: culpa
+                      example: voluptatibus
                     title:
                       type: string
                       description: Title
-                      example: id
+                      example: rerum
                     description:
                       type: Description
                       description: ''
-                      example: 'Sint sint omnis quo rem repudiandae.'
+                      example: 'Magni repellendus fugiat accusantium vel.'
                     component:
                       type: string
                       description: Component/Group
-                      example: vel
+                      example: nihil
                     comment:
                       type: string
                       description: Comment
-                      example: aliquid
+                      example: nemo
                     minimum_estimate:
                       type: string
                       description: 'Minimum Estimate (as a comma-separated decimal or int) Examples: "10,75" or 10'
-                      example: ea
+                      example: totam
                     maximum_estimate:
                       type: string
                       description: 'Maximum Estimate (as a comma-separated decimal or int) Examples: "10,75" or 10'
-                      example: quaerat
+                      example: omnis
               required:
                 - costEstimationPosition
   /api/cost_estimation_positions/search:
@@ -1298,7 +1298,7 @@ paths:
                 text:
                   type: string
                   description: 'Search String'
-                  example: enim
+                  example: vitae
   '/api/cost_estimation_positions/{id}':
     get:
       summary: 'Get a specific Cost Estimation Position.'
@@ -1375,7 +1375,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the cost estimation position.'
-        example: illo
+        example: sequi
         required: true
         schema:
           type: string
@@ -1424,11 +1424,11 @@ paths:
                     old_name:
                       type: string
                       description: 'Old Name'
-                      example: recusandae
+                      example: et
                     new_name:
                       type: string
                       description: 'New Name'
-                      example: aut
+                      example: blanditiis
               required:
                 - object
   /api/jira_connections/test:
@@ -1476,15 +1476,15 @@ paths:
                     host:
                       type: string
                       description: Host
-                      example: aliquid
+                      example: enim
                     email:
                       type: string
                       description: E-Mail
-                      example: geovany.murazik@example.com
+                      example: tschultz@example.net
                     api_token:
                       type: string
                       description: 'API Token'
-                      example: expedita
+                      example: quibusdam
               required:
                 - jiraConnection
   /api/jira_connections/new:
@@ -1532,23 +1532,23 @@ paths:
                     title:
                       type: string
                       description: Title
-                      example: est
+                      example: necessitatibus
                     description:
                       type: string
                       description: Description
-                      example: 'Rerum occaecati incidunt eaque placeat dolore commodi aliquid.'
+                      example: 'Saepe odit et et iste magnam inventore et doloribus.'
                     host:
                       type: string
                       description: Host
-                      example: iste
+                      example: molestias
                     email:
                       type: string
                       description: E-Mail
-                      example: nikko.keebler@example.com
+                      example: wjerde@example.net
                     api_token:
                       type: string
                       description: 'API Token'
-                      example: maiores
+                      example: vitae
               required:
                 - jiraConnection
   /api/jira_connections/all:
@@ -1713,12 +1713,12 @@ paths:
                 text:
                   type: string
                   description: 'Search String'
-                  example: quos
+                  example: nesciunt
                 components:
                   type: array
                   description: Components
                   example:
-                    - rerum
+                    - facilis
                   items:
                     type: string
   /api/setting/toggle_registration:
@@ -1753,8 +1753,8 @@ paths:
         - Settings
   /api/setting/register_allowed:
     get:
-      summary: 'Get Registration Feature Stauts.'
-      operationId: getRegistrationFeatureStauts
+      summary: 'Get Registration Feature Status.'
+      operationId: getRegistrationFeatureStatus
       description: "This endpoint allows you to see if the Registration-feature is enabled.\nIf returns 0, the feature is disabled. If returns 1, the feature is enabled."
       parameters:
         -
@@ -1827,15 +1827,15 @@ paths:
                     host:
                       type: string
                       description: Host
-                      example: tempore
+                      example: repellat
                     username:
                       type: string
                       description: Username
-                      example: animi
+                      example: ea
                     password:
                       type: string
                       description: Password
-                      example: 'U)?MDQ`.B@>dDTx}YX'
+                      example: '2_Zk?XNa'
               required:
                 - troiConnection
   /api/troi_connections/new:
@@ -1883,23 +1883,23 @@ paths:
                     title:
                       type: string
                       description: Title
-                      example: odit
+                      example: ab
                     description:
                       type: string
                       description: Description
-                      example: 'Blanditiis exercitationem assumenda eos beatae non.'
+                      example: 'In error tempore tempora enim modi.'
                     host:
                       type: string
                       description: Host
-                      example: sit
+                      example: porro
                     username:
                       type: string
                       description: Username
-                      example: nobis
+                      example: excepturi
                     password:
                       type: string
                       description: Password
-                      example: '-Z5B+wie:QTzGe9I^p'
+                      example: 8`a0^r4R
               required:
                 - troiConnection
   /api/troi_connections/all:
@@ -2064,7 +2064,7 @@ paths:
                 text:
                   type: string
                   description: 'Search String'
-                  example: sed
+                  example: saepe
               required:
                 - text
   /api/users/latest:
