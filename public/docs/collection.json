@@ -1,0 +1,1921 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "https:\/\/backend.ceanx.lubomedia.de"
+        }
+    ],
+    "info": {
+        "name": "CeanX",
+        "_postman_id": "070538ce-2d67-4639-825c-463742dc95ec",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Components",
+            "description": "\nEndpoints for handling Component Requests.",
+            "item": [
+                {
+                    "name": "Get all Components.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/components\/all",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/components\/all"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to get all Component."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create a new Component.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/components\/new",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/components\/new"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"Component\":{\"title\":\"eos\"}}"
+                        },
+                        "description": "This endpoint allows you to add new Component."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete a Component.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/components\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/components\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the component."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to delete a Component."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Cost Estimations",
+            "description": "\nEndpoints for handling Cost Estimation Requests.",
+            "item": [
+                {
+                    "name": "Get all Cost Estimations.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimations\/all",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimations\/all"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to retrieve all Cost Estimation."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get latest Cost Estimations.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimations\/latest",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimations\/latest"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to retrieve the latest 5 Cost Estimation."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Ceeate a new Cost Estimation.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimations\/new",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimations\/new"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"costEstimation\":{\"title\":\"nostrum\",\"description\":\"Reprehenderit laborum itaque quod quam cumque.\",\"unit\":\"aut\",\"unit_rate\":\"odio\"}}"
+                        },
+                        "description": "This endpoint allows you to add new Cost Estimation."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Edit a Cost Estimation.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimations\/edit",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimations\/edit"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"costEstimation\":{\"id\":\"eius\",\"title\":\"quis\",\"description\":\"Totam temporibus minus quam accusantium.\",\"unit\":\"deleniti\",\"unit_rate\":\"adipisci\"}}"
+                        },
+                        "description": "This endpoint allows you to edit a Cost Estimation."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Duplicate a Cost Estimation.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimations\/duplicate",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimations\/duplicate"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"costEstimation\":{\"cost_estimation_id\":\"aliquid\"}}"
+                        },
+                        "description": "This endpoint allows you to edit a Cost Estimation."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get specific Cost Estimation.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimations\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimations\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the cost estimation."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to retrieve a specific Cost Estimation."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete Cost Estimation.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimations\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimations\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the cost estimation."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to delete a specific Cost Estimation."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Attempt to authenticate a new session.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"cordelia.armstrong@example.com\",\"password\":\";3=l(w4I!uRSG)\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Destroy an authenticated session.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Send a reset link to the given user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "forgot-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/forgot-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Reset the user's password.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "reset-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/reset-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"token\":\"velit\",\"password\":\"dolor\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create a new registered user.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Mark the authenticated user's email address as verified.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "email\/verify\/:id\/:hash",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/email\/verify\/:id\/:hash",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "optio",
+                                    "description": "The ID of the verify."
+                                },
+                                {
+                                    "id": "hash",
+                                    "key": "hash",
+                                    "value": "voluptatem",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6Ikc1djZCZDZIWkJ5RSt3TVQ3OUhNamc9PSIsInZhbHVlIjoiU2h0TFhBQ2pWNHVGTnNNK09XOWpwQWdUcGRpZjBLQjBycVF3MEZDNGlpQUpNbG9FK1VYWG8rOFlOcGoxeVNTSHBrQXJhcE5Hd09rdzR2SnA4WnlKQVV1ajZEV2pISkkwY0ZBUWZpTUgwVnV6UmpOUFFWYzVnWUpZbnc1YTNjMnAiLCJtYWMiOiJiZTJhNDBiMmEyYTNiYzhiMDdmY2ZiMWIyOWJkY2M0MzZhMjY0ODc4YmUwOGU4MTI1YTBiNzRkY2JhZTBiN2VjIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6IjlrUFUwS0RkeFU4cTBEYURxR2puT3c9PSIsInZhbHVlIjoicnFkeFg1dmhHQ05TWWY0Tkd0V3p0NUY3WW41MS95bnlVcm5UQnRtMnFGbjQ1ZXl0cisrT2dqU2p3ajdIdGFQOExjd2tHZUNQTDNadkxQb2lORFBtdnFhTmVNVGNSdE5WOUx2MG4zL3JkSDBqL0NoL0Vpc0ZhNVlteDAwUFhVdGoiLCJtYWMiOiJmYWZiNjdlNjRmODA5NWM5NzYxMWE0NGFmMzNkOWUwMTc1ZDA0ZGIyYWRiZWNiZTc1YTI2ZDM5M2Y0YTA3OTAwIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; bjZkZMHXHk5KCjKnpjNwQoyweBxGVVGvDDl9qvGb=eyJpdiI6ImU5R3MwUUZuSWN4NXNESEtHUGpsTUE9PSIsInZhbHVlIjoiaVBuN0NBZ0xGTzkzczdvY1dxRllydnV5cmlEK01UaFJxbjAyRVZqLzNhVFpXY3dDbHdXTTRLQTBTazRMQ0Z6Wm5tL0ZmdGU4T0RhQXQ2SXlNNjZ6QzRiMGFka2Q2VHVveDdsSlNXNHIvcjFodllpUDZSN1dzbFhBM3lUaldOTkNvdFY1NlNtT1N0b1cwcWFNdk9ZbFhSZ3p1TFl5S1FiRUNhWDQrTElhVnlhQ3dQYTVXNGgybStQWGpxcGxtT2ZubFBrSUVjVFFFYkFqV04vbTA2bVo1V2dZd2tJTUNZQjN3UkdVWk9hZnVydlMycW1BOVliRTcvaFVqN3REZ2hyZmJ3dTV0My9ST3J1WGpDWGszZEFHc04ySXVZOSthMVVFVVpodEtmK3FZdmxueDhJc0hJTGRhelBLcFA5T0g0dDVHSkZNbk5nQmgrRU16YmdHc3UzcjNvWGx2a3c5a3VqY244T1RvcjFvSkY1a0lFQnNaa0pnc2VPdUVnNFUybVAvR1hOcUk2SEtUbTk2b3FpTnc2c2dscXhheTR0ekxscjVlb2NmSHR3QzYwYz0iLCJtYWMiOiJlNjA1ZmZlZTNjNTM4N2ZlNWJmZGEzMGZiNTMxNTc1YTdlZmRhMTNhNTk2ZjZjMzJkYTJmZmQ2NzhiY2RhYjhmIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Send a new email verification notification.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "email\/verification-notification",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/email\/verification-notification"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the user's profile information.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user\/profile-information",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user\/profile-information"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the user's password.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user\/password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user\/password"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get the password confirmation status.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user\/confirmed-password-status",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user\/confirmed-password-status"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6InRqY2c4UWphYWszRDd4QUdtcm5iYWc9PSIsInZhbHVlIjoiU1NpWFBLTmhIbEtLbEJZcnFIZVdXVGp2WWc0T1l5ays1RitjUVhUMnVRSDQxQXVIUi9Nek9lcWJBNlFFdGFjMkxuNlRZbWNGQWpXeTR2aEJHK0RrZVNEdjdiYVJYaTNUVmIveVBlemJXeGYwaW1pNGV6Y3d6blFndy9QdHlER0YiLCJtYWMiOiI3NzljMzQyOTg2ODM3ZTMyNWY3ZjM1MTUzOTRhNTkwOGQwNGFlNGNmYjBmYWRjMGI4ZGJhYzliMjU3ZTlhYTA0IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6ImRjalV1YmJ0NXhHSDV5K3JnYTBrQlE9PSIsInZhbHVlIjoiOUFLTEVMU3NERlBjWFVJMFZVdzVVWnEyVG1YUUJQNkx0K0JUbmQ2dFB0eGo2eHc3VnlXSUZPcUhBSHVRSW8wR1FVYTJ1V2lpYXY2UW9hQS9ieU9rNXVNVDBMbklRNUpoOU0vbU5rSkQrZGVkS0JqMnRNcmwwQTB5SjZCUDh5Q2oiLCJtYWMiOiJkNzQ4MzViMmUwMGI1YTRjMzc2YWU3MDIyMmZkZTM3OGQyNDhmOWM3MzUxNTExMzUwZjU2N2M2NWZiN2VhMDJmIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; bjZkZMHXHk5KCjKnpjNwQoyweBxGVVGvDDl9qvGb=eyJpdiI6IlBxbXpJWVVlRmJIZERBd3pINGpkbnc9PSIsInZhbHVlIjoidWIvdk4xYnptbGJCNVcwMTF5SjdBWkZ6UXRwRENvczdSeUtWU25MT0xEMXA2L3NKQ096WTU4VUJyc3Y1bzFKMWxudW5WY2RlZ0NWREZ0dVdHbEF3ODZJTFdMdmc5Sm0xcUFBMUhVTjdJbWdWdUlNQVp2K1N1Yk1XWEw1cGRYTkZjeXBMZkYwazJyWm5CVm92YWQvRERndjY3ZVZkRUtUU0NBcEkrTWdlWjg0aGZpdnFNNlBWYmV1ZWw4cCtKa242VTdlbUZ3N0k0TzJybG9tQk85UjUzTXk0ODQ0U2c4V2RNamFoTWRDc0tqUlFRWDdZOURoZDdNTWVOYkpQcnowcjk2UGhROCtwZHFEOHRtL0ZScm8yWm1UNWhJT21tcmZhRjlBYjZkM0VRVFNxQi9RajRHNm9EaGFXSkhuUnNMTnJEcG1mY095RitaaUVvREF4K2RNMFk4MXdDd1UwVG5DQXpVaDdscnJBOS80L0pLNWs1S0Jqa0pTZzVQTzFxdUw5M1B5ZFMrVkd4VExTbllTQUFNRno4M2hQU0FGdUcreXowSHFPNjJIYjBSWT0iLCJtYWMiOiIyYTU1NzlmNzQ4YzJhMmUxN2U1OWNkZWI0OTEyMGM0MDVjNjc0MDFiM2IwMWI5MTgyMzUyODRlZjcwNTRhYTZlIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; 3MQJmZWROWYLhKNasy3ELY3wVEmPWoBXfZWmfVzd=eyJpdiI6IndoZzhxeXJoK0ZYUE5xV29RVHJyT1E9PSIsInZhbHVlIjoibW1KMCtsa3ZHRXVEMXlGcjJwMGEwU2ZqOWFIUy9pcTNhZnJxWFpQRGR2UXd1YkJBV2pDbjVzZ0Rnc0RJclpyYkxJamFhdGlMdTVOdTRUVW9hSjRiUTRkNEZScXdoTzhBRGMwRTlwZE40b0JOdTF3U25WMGJmckJGdHVUdHNDN2YzbVoxZGdLbkpVQmNhbUtoVEpVcThVMnVjdy83ejlSK3d3eXYzVWg3UU04aCtEblJTLzNieFNzUkovTkxyMWFKWGw5b2RwRGR5cDhLMVNPdy91M2doVy9UTDN5RUFKbzdySHBIQkdldGxxUFpPK1UzOWNFNTRQTllaYXIzL1hYTXpZbmJXcUpDS0pTL1BqM242M0J2QVM5dVBFRlI3OFZwOE44ek5KallQRlprY0gzZDMvZlJSbE44dzh0WTVyeCs5V2x3R0hnRDdJSS9vTHYrMDhhaTlVWElXR2VVRkdvdGFWRVIzQUxnLzhnR1BlcHRVWVRIQmJ3Zm8veXFsNFkwL2VYY0VGRXpERmpzYUh4S3gxcWh6SktpT1JlTmVmb1JGMmlTNFlTckpFOD0iLCJtYWMiOiJiN2MwNDJjMzUyM2JiMTc0M2U1MGZjYWQ1Mjc5MGY4YzMwNTI2MzMyYzllNGUzNmJhMDA0ZGE5Zjk2Yjk2YjE5IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Confirm the user's password.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user\/confirm-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user\/confirm-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Return an empty response simply to trigger the storage of the CSRF cookie in the browser.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "sanctum\/csrf-cookie",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/sanctum\/csrf-cookie"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6IkdsNmVscFNjbnphZVB1WGFZcnUzYlE9PSIsInZhbHVlIjoid1BjNU5QSU13MERiSFRDVlhKV0xvTDBXOTFXMDFvZmRkdnZiOTh2dzN0YThlQUZxKzNmSXEwdExia3AycVBXcS9hOGtKa00rMzVES010UjREM0tYcmtuejRpcmg0WWdoMUNNRFdoQ2pVZFJxTk9wNDVraVBDNEI5aTNvTENZT3ciLCJtYWMiOiI3MWFmN2NlZmJhNjc2OWNiZjY2OTIzODlkYjcyOTRjODU5OTQxN2VkNjMyMDY3MTM0YTE1MmQyYmRkYjM5YTY1IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6IjZqM1NBRWZKcmFaWXJpWFdMblVjMGc9PSIsInZhbHVlIjoiTzRzZDJWUXBXYTJSWHdKNHFXRnNYWXFqdk9wUTBDQ3ViemMvMzRMZUFIVmNmcDdheDlBOTF5UnQ2OWNrWUt0SXc2UWh5TEFRSkVCN3NtNlZPU2R0NzYrODcvdkhaR1lZcjNrbk5sVndnRVphUHRUN1hKNk94QWhIbmp4aU42dDQiLCJtYWMiOiIwNDg4NzVjZTM2ODBlYTAzM2I4NDY3MzY4MDlkMjI4Mjk5YTZlMmVhNWY1NDBmZTlhMDM4ZGQyZDljZWM0ZDlkIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; bjZkZMHXHk5KCjKnpjNwQoyweBxGVVGvDDl9qvGb=eyJpdiI6ImxxalBSWm5BTG56VmJnOEtQQ2djbVE9PSIsInZhbHVlIjoiZG9BaXFjUks2SEVHM3JML2o5V3NPQk1Sb3dseUU0aVFSZGRVTTlXcFVRbGF3M3J3MkdNR2d4d0lWSWwyQnlMSUdHNHZsVHlQYTBxUE1QQ1RCMXgrbXpWSmpGZ3p4d1JRK3RRWTQ3NnRwOUZ6QlNHTFdzd1FkcFQzendPcUdwL2pnd1dpRWF4QXJMdkVocENaVUVRbUlXUmxLcGJiZzhtZVhUOVV6SSttZkJzOGQ1Nk9wRjZIUGNleUtvVjI1ZUFoZTZMaDJYUi9oRUNHaWkyZTFzT1FYWDNGYzVLdit0NXdpbU5WRlNNOUxsRmJXZEhWZFZyVnN1ZElhRnJ1Zm41MmpsdGtOWisyREFnSURhR0FPc3VQdUNtb2F3c3VRTSsvTk5lTVp0YXREQTcyZFRualM5S0ZNRm9iZkpnTEx2V00vMmFVT2gva2htUktBTldYME1zd2ZpZEpwUXBkNlp1dWdTTEkxTVA5VHlKMjFFQUszU3Z2Z1BrMG82UGVoc1JRRFVpdE9zYTJ0Lzl4YkltQU94WnNnQWx2TzNtQjNoSTBJdzhhOGZsQzJwVT0iLCJtYWMiOiIzNWYxOGJkMGU4MGE0ZTE1NGUwM2IyYjYyNGJiMDNkZDJmYTNkZWVmZjZkZDJmZTFhMDhlMzIxYjhiYjAzZGU3IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; 3MQJmZWROWYLhKNasy3ELY3wVEmPWoBXfZWmfVzd=eyJpdiI6IkdtM0VvUWVOaUprTjJCVjE2K1JhN3c9PSIsInZhbHVlIjoiMVF6clFGMXlVckluWitydVoveGhLYXBSQjNaK1JMdGtzRWlVZmJlNzZlbUJyY3k2ZVdDS3hoY0VWaUpGOUdGT2loSEdaRXdpSDV3WTVNeTl3WThMcFIzOHRGemZxQ2hTUkpxdTJwLytZWW82ZGllTXg1aGtxS1BNL1Y0R2xGdndGakFWTHZCdEVKTmZqNHVma3krdzZ0WlNUS2RiU1MwMm8vclBlaEVOcVNwYy9PditGeWtRNmJWa1RUeHNuWUUrN0dUYWxpcG1lTmFEZU5VL1prUklRSEhiT3FWYnZJOFRIRmN6ZmdIbWszSE92RjlGMmU3U3VIMWt6UVQzbjlSalpVSVNOeE5KV0poZ24vM1VDUTNOZjhsbURESHdSTjgzMEw0SUpjdTQ1Z2hlOVh1Zkp3ZDJnRXRoMEFUYW9jbDZrZk5udURhelFZdy9xZk1yZ2szTmFXQ0xOdmZzV2orVE1SYkJpS1JUV29ZZVhvNFRIckRXTlBqYXhvWHNlQnh5R2ptd2dGYTI5QmVDVisrUktnN0gzTDAyTEE5VDBKL0ZYQlhDQy9UMUs1ST0iLCJtYWMiOiJlOGQ5ZDg2ODkwYTZjY2YzOWEyYzExYWMxZmZmNTA5N2QyYThjZDE5YzdmYjdkMjU1NGUwNDQ2YzZmZjQ5MTM3IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; vFHPS492X190aKadHkChqH3XyGwTR1Pn7yFt06zm=eyJpdiI6InZ2d3B6VjNYK2J1ZDBoTE5Sb1hZcVE9PSIsInZhbHVlIjoiTm5pYk42aWNMTG5nNndJVm5MdFhtZ0VZbmJsNEV2Y2NPSEtBbXVLaG9hMW9KZmcwUGl6TWkvbXJUdTZPc0FzUUlhMnVLTDRVVld2WGZnOGtlLzV1MmhGeEczWFBMS25Wd3daTTB6aFpTUFBGL3d3K0x4OUtoL1VMYVZnZytXaDdzazdKV2JWVjVtSVdrTGdxajJqM0l3NE1RajdTYWM1OHE3Q1hEazJCcisvNnBqZ2QrdmIvS3dCY1VGTzZwUStINXlaUGRLdGx4aDNlMS9PV1lacGx6SFgwK3FYNXVKWVlQekpHTW5YMXNhSzNzU2dTVXdhUzM5cnczR1d1TnRCeUNhTHEvSXAwUTdDREJwRGpORWRrcXBueDgvUVVOVUdseWdxRlFaWnpPSW5qNTdjb2tRV1Bkc1o1T3ZyU3R2S0cxVFBuODk0bGdiVEVMVTJkRzdieXN4L09KZ3dlUzI5TzBXRy9iSitRd2tSb21ZYWZKQUprZXorSWZwUWJJUmpvOXU5aW9tVkxZaVhvSHBLK1luY3ovWGx4L3JKdzgrU2V4MWROMGpnRmRNOD0iLCJtYWMiOiI5MGRlZjc5MmVhMjhkNDU5OWNlNGZlY2IxZWVhZGIzYjNkOWYyMTY3YmY2ODBhY2E0YzIzMTQzYTA0MmVlMmJhIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 204,
+                            "body": "",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET _ignition\/health-check",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "_ignition\/health-check",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/_ignition\/health-check"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"can_execute_commands\":true}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST _ignition\/execute-solution",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "_ignition\/execute-solution",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/_ignition\/execute-solution"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"solution\":\"rerum\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST _ignition\/update-config",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "_ignition\/update-config",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/_ignition\/update-config"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"theme\":\"light\",\"editor\":\"porro\",\"hide_solutions\":true}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET \/",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "\/",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/\/"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-type",
+                                    "value": "text\/html; charset=UTF-8"
+                                },
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6IkRnWmd4MWQzZndRQzRzN2REZ2svM1E9PSIsInZhbHVlIjoicFY1TXZhSTdaQ0xET1RKckVlaldwdVloWkl2R2JhN2FvQkt5ZkxEY2p4YmhQQ1QxK1ZtQTZkNEczYWxXT21TSU9xeW5wcC9RaFNjcThFYmhpTjRRQUdIcXFISEY3V09JK0NBN3RQcnljdXM0cURnMzVSZlVNTU40ZDZkUXV5RjYiLCJtYWMiOiJlZDMxNDNhZjJiMDI3ZDk5ZWJlYTg3NDM1YWUxYmVjYThlMmZkZjgwODg5ODVmNDY4ZWU1MDExZTU3OTQ5MmJhIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6InlFVVF0Y2lBMERtT1dDbXI2WWJXSUE9PSIsInZhbHVlIjoiVGwxbUNMTVVRRW9ieVdkUk5JaEVISW1veFNIUnFYdzNpTktvVjltY0dSVXB1K3paSXMreEVoTVNWV1FRVk1vbGUvMnk3bjZ5N1o1NmsrMWxWRFdEYi9jaE1QNjdSeG91STZzeUgyOVhXQjZBTjRTS243dEhiMVlGZzJ5WnFVd3EiLCJtYWMiOiJhOGIxYzg5YmMyZDkzNTMzYmNjZmNhMzQyYWFlZDRhOGNmMmIwZDI1MTg5MjEwYTQwN2QzOTljZjk2MzIyYTA0IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; bjZkZMHXHk5KCjKnpjNwQoyweBxGVVGvDDl9qvGb=eyJpdiI6InQ4WnJycHNzenQvRW1WS3AxVjcyVUE9PSIsInZhbHVlIjoiNXU3Y3JWREJURm1tbEZJRDgzcHF4QUxTMXhxM2FtTjY2T0JFdjJLcWtiWk10Qml1eVZxZlQ0bk0vTkkvZTVjT0lSNHdyTVVWVnJsVUVxNnQ1VVJvOUhqUXRRSEpCMHBqUWlmd0lQeWR3MkVFd3VMNW9sL0RMQkZwencxQk5jSEZnK1RpQ2ltbVBzckNsclBQeGkvZzFRUTRzTGF5T2QzYm1NQUtNUGNvV2hwc0JHSndjYURiSVRGZEZjZUpMMVZ6NVRxYTBGOFRWbTVuT0xITSt2T3lpbm0yWk10VmVOSTMwSDh1bVZ3MnRuR09jMmtlL3I5aXkrUk4vUkNsUWU4UlgrVXI0cDA5RGZ0YVliR2VqTTlmc1lRZmR6SDhUWFlEb1c1Ym11bUhoOUhZY1BSSVVYRE9kNFlmK2piTmRyUk1SZ2MwbHJoTXR3clNTcW9KZGxYeFZITFU4T1JieTg0RWgxUTV2eDlCSUt5cWVDUHhZZ1ZOQ1lybmFlT3BaZEtNRmphV05nV2ZVUWtxK2RlNzJZL09JWjQxVmlvTWd4Qzl2clRGNGxNS0dhWT0iLCJtYWMiOiJhYzNkYzA0NTU5NjQxODY2YTFmNTJiZWZjOWYxM2M3MzE3YmIwNzEyN2EyYTNmZDVkMmQ2N2YxOTdlMDEyZjJmIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7198; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; 3MQJmZWROWYLhKNasy3ELY3wVEmPWoBXfZWmfVzd=eyJpdiI6IkgyNXFwSkhXZzdPYmRwV2IwN3czUEE9PSIsInZhbHVlIjoiZUV4cjVHRHRIMVJJaklhWlFNRFFMS3NkK0FPWm5hcFV1WTdYUXQyYmI4Z2lSZkljQjI2TVhuZStaSTFwZFFBd1VxRnZ1eDdVZVBKMENZRU1rWi9Ea2NWMmlkZnN1dXJEck9yZjE4dStkZU5jemJaQThoZGpQZklxTmJMakR3UUV3bENSVUcrdUZqandNa3ljVGlWalJPSGpkenZzZHpoZVJIcERtb0VmQjhRWHpVMlMzdXlHVjhMQ2tjVHBpSlF4ZHk1SFYzZFM4WVJ1M3Zwbzk1dDFQcHFseVZ3bUh5MS93U1JubUJidTd0UjV1YStHZEVxQlZFdkZ0K3ZYQlJqdGpJNk9sZ0JzNUxEaU1ZSExWbnVhVnAzM05udmFiOWpWK1BEK2c5VFZtODhFZVhCcnlZTUdIYU1kcEg3Q2d6c082bjVIaVRFbngwUVRVMXFXMHk1TithZzh6MlhLdWJxaTVpZUw1bnVybEFPUHdZR0laUWlGUHpBTGJ2clVtdE9xY2V3N2JtMjRGdzZRb291bG9RRUozMFFSaDd4eUdkUHYzMm0zUlNPOW9TRT0iLCJtYWMiOiI3ZTY2YjBhYWU4MWY2YWYxODRmNTgzODUyYzBmMDdhOTQxYmMxOTBlZWQ5NTM0YmE4NWEyOWEyOTQzMjNmYmNiIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7198; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; vFHPS492X190aKadHkChqH3XyGwTR1Pn7yFt06zm=eyJpdiI6ImxrYWw4b2VyR3NIcGxZWC95TFBmUmc9PSIsInZhbHVlIjoicTJFSnJYOEUyaDdTZzhaNWtYUWZyc0wwUjJFNVpxY1ZKWTFHa0QreXRkWjV3WWExV2F1Y0V3T1k4eEt1Wlp3NGRQS05tVjJFTndoZGZ4U2wyZ2tOWmNRb1JUQWFMcTh3aGZHUEIrWGhITWFVUHFBdzEzVmRxWDhqbHQxTGF6bG9XYzJwaS8xeVlMT252b3krTWVhQjR0Q1lBRU5RMW5GeFpGbmFmMTlkT0RYbU5qYXJRVXZ5NEVVMjV3ejE1U2pqeTluRmRkNG5sYkJCbXZvanFHY3RRZFB5Y1FZaHRJa2c1NmJZS3cwTytzZkpxcEVjNGFzQXhpTUQySUV4SnNOK2p5OXVPdVNsRkhqWnBzcWJZWVhHQ0xReGJZMSt2VzlNT05zU1FndmJBVlpiUU9NdWJIV1g0bVhaMk82d0tTV2lveUhMelVWZE92Q2xaV1hLRFByVEoyeTBHWFhJaWRnelBadkVXQThjbGsreGYzTTBZTFBDVDVLekpBcWtGalUwb0ZYYUNlQ3RYSUxTWlYvbTQzcmN3TEFDSlJIdkJWcXZlTU9tbkFPUm0xYz0iLCJtYWMiOiIyYjA3NTZlNTk4NjIwZTUwMGRmNmZlZGE2YzQzMTFjNDBiOWI2YjYwMjE4OWE0MmRkNTcxMmE0OGQwMmVmYzZjIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7198; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; VU3Gz0tX8z74ggV4H039MZO5AUJqnBOK59TRZV1u=eyJpdiI6InZ2L1kwa3p6QVNoS0hha25sVzQxUVE9PSIsInZhbHVlIjoibkFrOGZlaExjNEQ1U2pQdGRNZ2V3VFdCSVpZY29SdFNicnlQRjhOcXAzZEsvaGhlQWhmNHhiZ2VnSHdGZVlQVDVwczFhZHVUc2JLRFg4ZWM0YUtnOGxjQTExRm5BeTVkTk5yTGkyU0tBOWFZWW5RMjN5clFKOWd5Z1pISmRhK1lyZzBEK08rWkZIbldQaUFIK2dsM2VHa3BXVmRiMm1jWENZM3owMmFkbnQrVzVzV0lzSGVQZ0JvUENVd2ZMaVhvS1ZCaTJLSkpoVFNPa2hwOTFNMFlrKzZtaXZuYWpLbUVyaHNZUDBQK0haNW1wR1ZVVEpmWG1xV09uaFhoSE05dS9teHc0c25zamNPSWoxSFUveWpiMmZSQWp0bFY3MEZ2U1EvUUlZcHVkZWlJOXFid0IwTmVuR3JiRGtka05mOHJ5aGpBZ1dBUythK3BKWEE5a1JOSWt5Zi9EdEQxRnpJZlhJVWdWL3dBRDl1Y2VzM2NqZlRsZjJEMWJvZmc1dE5sIiwibWFjIjoiZTlmM2QwMDVkMTFmN2EwZmNiY2Y5NTFiYjJjOGI1YzMyMDE5NjYyYjhhMzAwYTQ5Y2IzMDQyY2EwODY3Y2VlMSIsInRhZyI6IiJ9; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>CeanX Laravel Backend<\/title>\n\n        <!-- Fonts -->\n        <link href=\"https:\/\/fonts.googleapis.com\/css2?family=Nunito:wght@400;600;700&display=swap\" rel=\"stylesheet\">\n\n        <!-- Styles -->\n        <style>\n            \/*! normalize.css v8.0.1 | MIT License | github.com\/necolas\/normalize.css *\/html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\\:rounded-lg{border-radius:.5rem}.sm\\:block{display:block}.sm\\:items-center{align-items:center}.sm\\:justify-start{justify-content:flex-start}.sm\\:justify-between{justify-content:space-between}.sm\\:h-20{height:5rem}.sm\\:ml-0{margin-left:0}.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\\:pt-0{padding-top:0}.sm\\:text-left{text-align:left}.sm\\:text-right{text-align:right}}@media (min-width:768px){.md\\:border-t-0{border-top-width:0}.md\\:border-l{border-left-width:1px}.md\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}\n        <\/style>\n\n        <style>\n            body {\n                font-family: 'Nunito', sans-serif;\n            }\n        <\/style>\n    <\/head>\n    <body class=\"antialiased\">\n        <div class=\"relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0\">\n            <div class=\"max-w-6xl mx-auto sm:px-6 lg:px-8\">\n                <div class=\"flex justify-center pt-8 sm:justify-start sm:pt-0\">\n                    <svg viewBox=\"0 0 651 192\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" class=\"h-16 w-auto text-gray-700 sm:h-20\">\n                        <g clip-path=\"url(#clip0)\" fill=\"#EF3B2D\">\n                            <path d=\"M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z\"\/>\n                        <\/g>\n                    <\/svg>\n                <\/div>\n\n                <div class=\"mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg\">\n                    <div class=\"grid grid-cols-1 md:grid-cols-2\">\n                        <div class=\"p-6\">\n                            <div class=\"flex items-center\">\n                                <svg fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" class=\"w-8 h-8 text-gray-500\"><path d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\"><\/path><\/svg>\n                                <div class=\"ml-4 text-lg leading-7 font-semibold\"><a href=\"https:\/\/laravel.com\/docs\" class=\"underline text-gray-900 dark:text-white\">Documentation<\/a><\/div>\n                            <\/div>\n\n                            <div class=\"ml-12\">\n                                <div class=\"mt-2 text-gray-600 dark:text-gray-400 text-sm\">\n                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.\n                                <\/div>\n                            <\/div>\n                        <\/div>\n\n                        <div class=\"p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l\">\n                            <div class=\"flex items-center\">\n                                <svg fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" class=\"w-8 h-8 text-gray-500\"><path d=\"M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z\"><\/path><path d=\"M15 13a3 3 0 11-6 0 3 3 0 016 0z\"><\/path><\/svg>\n                                <div class=\"ml-4 text-lg leading-7 font-semibold\"><a href=\"https:\/\/laracasts.com\" class=\"underline text-gray-900 dark:text-white\">Laracasts<\/a><\/div>\n                            <\/div>\n\n                            <div class=\"ml-12\">\n                                <div class=\"mt-2 text-gray-600 dark:text-gray-400 text-sm\">\n                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.\n                                <\/div>\n                            <\/div>\n                        <\/div>\n\n                        <div class=\"p-6 border-t border-gray-200 dark:border-gray-700\">\n                            <div class=\"flex items-center\">\n                                <svg fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" class=\"w-8 h-8 text-gray-500\"><path d=\"M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z\"><\/path><\/svg>\n                                <div class=\"ml-4 text-lg leading-7 font-semibold\"><a href=\"https:\/\/laravel-news.com\/\" class=\"underline text-gray-900 dark:text-white\">Laravel News<\/a><\/div>\n                            <\/div>\n\n                            <div class=\"ml-12\">\n                                <div class=\"mt-2 text-gray-600 dark:text-gray-400 text-sm\">\n                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.\n                                <\/div>\n                            <\/div>\n                        <\/div>\n\n                        <div class=\"p-6 border-t border-gray-200 dark:border-gray-700 md:border-l\">\n                            <div class=\"flex items-center\">\n                                <svg fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" class=\"w-8 h-8 text-gray-500\"><path d=\"M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"><\/path><\/svg>\n                                <div class=\"ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white\">Vibrant Ecosystem<\/div>\n                            <\/div>\n\n                            <div class=\"ml-12\">\n                                <div class=\"mt-2 text-gray-600 dark:text-gray-400 text-sm\">\n                                    Laravel's robust library of first-party tools and libraries, such as <a href=\"https:\/\/forge.laravel.com\" class=\"underline\">Forge<\/a>, <a href=\"https:\/\/vapor.laravel.com\" class=\"underline\">Vapor<\/a>, <a href=\"https:\/\/nova.laravel.com\" class=\"underline\">Nova<\/a>, and <a href=\"https:\/\/envoyer.io\" class=\"underline\">Envoyer<\/a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href=\"https:\/\/laravel.com\/docs\/billing\" class=\"underline\">Cashier<\/a>, <a href=\"https:\/\/laravel.com\/docs\/dusk\" class=\"underline\">Dusk<\/a>, <a href=\"https:\/\/laravel.com\/docs\/broadcasting\" class=\"underline\">Echo<\/a>, <a href=\"https:\/\/laravel.com\/docs\/horizon\" class=\"underline\">Horizon<\/a>, <a href=\"https:\/\/laravel.com\/docs\/sanctum\" class=\"underline\">Sanctum<\/a>, <a href=\"https:\/\/laravel.com\/docs\/telescope\" class=\"underline\">Telescope<\/a>, and more.\n                                <\/div>\n                            <\/div>\n                        <\/div>\n                    <\/div>\n                <\/div>\n\n                <div class=\"flex justify-center mt-4 sm:items-center sm:justify-between\">\n                    <div class=\"text-center text-sm text-gray-500 sm:text-left\">\n                        <div class=\"flex items-center\">\n                            <svg fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" class=\"-mt-px w-5 h-5 text-gray-400\">\n                                <path d=\"M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z\"><\/path>\n                            <\/svg>\n\n                            <a href=\"https:\/\/laravel.bigcartel.com\" class=\"ml-1 underline\">\n                                Shop\n                            <\/a>\n\n                            <svg fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" class=\"ml-4 -mt-px w-5 h-5 text-gray-400\">\n                                <path d=\"M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\"><\/path>\n                            <\/svg>\n\n                            <a href=\"https:\/\/github.com\/sponsors\/taylorotwell\" class=\"ml-1 underline\">\n                                Sponsor\n                            <\/a>\n                        <\/div>\n                    <\/div>\n\n                    <div class=\"ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0\">\n                        Hier gibt es nichts interessantes zu sehen oder zu entdecken :P\n                    <\/div>\n                <\/div>\n            <\/div>\n        <\/div>\n    <\/body>\n<\/html>\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Show the application dashboard.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "home",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/home"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6Im5XQWVucjR0WlY1M1NJOGdmYXNUWkE9PSIsInZhbHVlIjoidjg4WnMvS2ZzQ0dQODFnRWtjdXRJTTJZUG9mYzEzVmFQUlViek9iRU01UHN3WSt4TFZjUWRBODFvaDhibDV6NFUvRFQwck53OHdMTHNHRmVaS0sza3JoYjR3eGQ4bG1TNWp4VjVTNVVZSkJST1N6UG52eGlnNjhiT2hONkZRdE0iLCJtYWMiOiI3MTc3ZGM4MThmMzA5MmU4NjFhYWRkMWQ3Y2ZjNTRlNzEwYjc3ZDE4YzhjOTFmODg4Yzc3MmMwMmZjMWUyY2MyIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; samesite=lax; ceanx_session=eyJpdiI6IktvM0o0K3FHazFTRXZGd1pRTzFtemc9PSIsInZhbHVlIjoiZ09MZTdMRU9ENDhuUWpldTVCU1dnTmlLVTlrRDNERmdqZTV2MGFiUzhXL0gwZW1MM0lCMG5ZNlV6cVNOQVRxc21pQnA3eUszQ0dVRlZPZ0pzck0rSjZQRVVRRm1QV1JLNTlGTGlJN2VEaTcwUHBQRzl1S0tFYWdBWFBldnZBcmQiLCJtYWMiOiJmZmE0M2M3ZjVmNDZmNDYwYTEyN2UzZTk2MDZlNDk4YjhjZTE0Y2Q0MzY5MTRiNGEyODQ5OGZlOTM5MjdkYTIxIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; bjZkZMHXHk5KCjKnpjNwQoyweBxGVVGvDDl9qvGb=eyJpdiI6IlFQZURIM1pweTR0aDVFdjkxSnoyc0E9PSIsInZhbHVlIjoiZnJyY3BqU25Ra1JsZVNjMXZianVGL2drYkFrbll6QytIM28yMVAwdnJQUGd5ZGdTeHFsN1l5dDNjVzlkeUx6ZWFHeWRGMFppNEQ4eXhrM1ZZaUEwZmg1SzJYTCt4TVhZTDkyMUo1akNJWTdTUzdzN3NZdHN5NEZ1RTBSS0k4eHliQktOejRnMTFmclBvK2Zxb2w4Zlc5MVo2aXd4cUpEQVEydkc3elR5WFVMS1NGamUwYlYvSFYxRUJyR0tVQlR4djdITVBvZFVjRFpPeGx2Qi9lVTRMVDhNUFlObDNZeVV4Y3NnY0VKaWxGT1dHaUdjY21Vd2xmR0xvT3hGaklNQ3Y4OXhZNmFYdGM0eFNoQS9BZS92T1lhbnhqb2UxNUZNMkZXQXNCdEU0WHhYYkk5bWMyNEZXYUdUMEEvQko0TkVHWXp4MHVWMVN3MEUvMk5vdi8ybEhVWXZmWjdlZkxzb3p6WTUzQ1JSZzMwN1ZNa1FDdGRCYWJRY3dXdTNMdlkwWmMrSlV2TC9hdTc3YzQ3bmF4ZVZSOGhuUXdWZlZSQzVLNCtCSzA5d1gxST0iLCJtYWMiOiJkZjU0NzZjMjNmZGM5YWU0NTE4ZTQ5MjU5MmI0ZWUzMmJlNWJlNDlhN2MxNzJkY2Y4NTRmNTAzY2Y3ZDFiYTAyIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7198; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; 3MQJmZWROWYLhKNasy3ELY3wVEmPWoBXfZWmfVzd=eyJpdiI6InFFOHIvS0NaeW94N1J2YTNWNEM5clE9PSIsInZhbHVlIjoiVDUxdlM0d1JPYmsxeXFJb1QvakJraVMyQ05mZWRXQ1NjNTNIaEFsR3ZMYnVPNmRZM2lhRnJ1eVhQTnN0QnpEWDJUaUVIL0ZYUit2YllDQ1hnTzNHRklsdnNNdFdBdDNONVZ4TGVlODVDbHArWVczN1hZUEFXSkJwWWFTQlY1WHZjaml5UHNBZGMva3NnMWFSanl0YkIrQjlwTGZHZENiSjF0cjkrRWlxUEhmZWdRZ3BCS0xuVVB6T21PbFNBNG5HYUVUSGtrODM1N3JZTTI4dHpIOFhWa1ZQMnplZ1pWY1ViWVJ1SWljbUdWNVRUZHUyQlUxTnBFWXZacGZNVUY5aWVPY0J0NUhlNG1Oc0x2YThCWTRydCtQSWNSL1lkNG5DRFRKbUtSc2tzeGhCR2N0KzBmTGFScGtMUEs4TjB2czJkZkVHYVB5TGNwUmpZeFJyU1BJWWN5eWNVNzVIbXNRbklrbXIxWXgyNnFTUVVqY3hsUWRiM3dKWTgrQ2RXa25tekJ4U2ZFa2c4U1lVNGdaNGZBVHRYSjk0UEhRMHJpMWFxampDemxGOW1Daz0iLCJtYWMiOiI1ZDcwNGE5YmVjODZlNmUyMzE3NGVjNTI4OTEzMDYxNGQ5MGMzNDNjMmE2MTgzZjRmYzkyOTRlZWI2YjQ2MmZmIiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7198; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; vFHPS492X190aKadHkChqH3XyGwTR1Pn7yFt06zm=eyJpdiI6IjlVZ2FBcHVrYXRWaVRMTXNSd0RPNEE9PSIsInZhbHVlIjoiblFhWXNMMXgzbU9ua1ZJOU04L0w1VXkzS3pyQU9JUEVUMVNEOUNkUGJuM1VoRUJZRE52eUJlaXg0aEkzcDV6enZOUlk5Y2xqMmxCeFlvU0tuS2VKc2lxTTRQbFlLZE9ZRWtkN1R0elBxV3VIay9tcE5VUkx5d1hNWEp2WlVRVXk3bFdBNG56MnJlNFEwQmE5SEZrb0NTTER2Y0xEUEhMTW52OE1qaGtQTzdnTnBmTklNb2ZEYzYyREJ6dUJ5VzREZUhyQzZZQVovdVc3US8zbWxZbEVoMUcrcUFoUEhlNkFHSDFkeThYazJjMUI1azZUZUtqcURYWm9uL3lXMVdFTDNEVzQrNWkwWUU1WDRsQWNtRVpHdlg5VzNjSUlGUjlpVUlGNmYrTUZNKzJUSmx3SDNsYWMwU2xqTjVlcGJvSUZ1ckQ0QjdOL2JUUnJoek05VGRqdWI3V0JGU05mc21JWmlGRldLbGhCeEkwVjA3L1F1UXJTaDNpNjlwNlJGeGlDSWpFb1VzRjRrdXNOdkthdWdyWDQyZlhjSjdZU0VhZzNDeUF2cnJUMElsZz0iLCJtYWMiOiJlMjZjYWI0ZWYwYzlkNWE0MWY3MDBmYTIwY2E1ODkxNmU5Y2VjYzRjOWIwYWQyMThjNGFkMDE4ZGQ4ZDBkMTI2IiwidGFnIjoiIn0%3D; expires=Tue, 07-Feb-2023 20:45:05 GMT; Max-Age=7198; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; VU3Gz0tX8z74ggV4H039MZO5AUJqnBOK59TRZV1u=eyJpdiI6ImV2R2h1ckFZb1VZV2lrOW1SQyt3dHc9PSIsInZhbHVlIjoiSmdKdElES3NudnVnZGJXRnhlSE00Y1g5Zmx3dHVpKzd0NmdOSkxseEcxMFNEcmhjaDRlMVc0SldLcElUMUxCSVB2RDJWbjZNS3k4RWRVYzR3Q2FTL3J5NW9Da3Vmc1A5d2hGT0g5bWlJVXpDakEyRGxwRlZzbnhuUnJFcUxjeGgvNFEwcXZLVFpkNGhOK2FMR3duVkhoSzM2TnBQZmtOT0YrVUdHQ0NZZk0xbURWSmhyUm5vS1hDSDFmRy84Z3pNL0Z0S2srM05hdzFIVlgwOVJldzhJVitQdU9RbHlZQnI0eEV1MHhWeHh6ZDArTU9PdTBTMHFYaThuZndnNFltUTZQZFRyL2NoZzNNZ1grd3QxME9PY0RPZ1lIRG9odlIxb0JheFAydm1BUktvVmFXRnBYY2M1MGl5ZFVqQWF3UTE1cTBLbmNvaGFLLzdyZHA2aUhuOXhDVTBGZ0xEYU14cHZPNFpIQUVoejY4V24xNFV1THNrVVIzYTk3QlZvVEpJIiwibWFjIjoiMzY3ZDU1ZGY4ZTIwM2FiOGM0ZWZkMGRlMmU1MWVmNjE3MjkxZDg1ZjE5OWI5NmJhYjYyNjdmNTk3ODNkNGQ2YyIsInRhZyI6IiJ9; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax; tcQppMy0jBUrVF2YTWxkEIf4GsM65gCOf6hY7r22=eyJpdiI6IjlNYktZRktpSkNJZHgyMWJJbkRvUWc9PSIsInZhbHVlIjoiaW9zYytNUWZaa1YycUpwRGZMN1duNXlaNmYrU01BdFBSTDZ2MGR0VXhZRTFNbGR5MktNazNTNFpYTHFENCswUGl2OTE0RjI1RjNSMUNpYXZkYkJmam5CRUIzMlNVYVE4U1VENno0Y09QRnpzcFhFdlljd1F2dlhIRzlKczFhQzJiMEZxTis2ckc1ckh6YjA5c211My9FdXV6cGdaVnVYRXdHMVRpbGhPMEJ6YyswREFINTVZdUcwcWNtTm9mL1NqdUtObm1SS1JDNG5IaXBjby9YckpDT0dpMWV1V3ZtWjYvcG43NnNHRDRqcGtXTlVvZ21xZkxSODFBcDVrd3BxYnMvTkdKQ2F0bC9ocllVOTkyYTZvVk5Cb1RIL0Zld2gydlZVNWdkU2lTZnl4QUJ4OEpSbDIrYXU1cDlHRGtiNFljMkVhek5makUzdnBGY0tBeGhZK045WVVhUjM5cU9kN3NyY2M4Z05ueUZMTWZnTGVBVEdqcHAwWWRwNDd0KzF6RUR3ZkxHUFFzYnU1OFZRM3ZVUVhJUT09IiwibWFjIjoiNTNkYzBjZTgxNmZmY2U3Yjk5NmFhMmE1NTI2NDZlYjYwYjMxNjMxNGFhYjA3MTM4YjMxMDViNDQ4Mjk1MGJjNiIsInRhZyI6IiJ9; expires=Tue, 07-Feb-2023 20:45:07 GMT; Max-Age=7200; path=\/; domain=ceanx.lubomedia.de; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Estimation Positions",
+            "description": "\nEndpoints for handling Estimation Position Requests.",
+            "item": [
+                {
+                    "name": "Get all Positions for a Cost Estimation.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimation_positions\/cost_estimation\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimation_positions\/cost_estimation\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the cost estimation."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to get all Cost Estimation Position for a Cost Estimation."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Ceeate a new Cost Estimation Position.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimation_positions\/new",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimation_positions\/new"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"costEstimationPosition\":{\"title\":\"inventore\",\"description\":\"Laboriosam deleniti illum quasi exercitationem voluptatem accusantium.\",\"component\":\"dolores\",\"comment\":\"et\",\"minimum_estimate\":\"placeat\",\"maximum_estimate\":\"totam\"}}"
+                        },
+                        "description": "This endpoint allows you to add new Cost Estimation Position."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Edit a Cost Estimation Position.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimation_positions\/edit",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimation_positions\/edit"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"costEstimationPosition\":{\"id\":\"corrupti\",\"title\":\"dignissimos\",\"description\":\"Odit et doloribus non.\",\"component\":\"explicabo\",\"comment\":\"occaecati\",\"minimum_estimate\":\"ut\",\"maximum_estimate\":\"itaque\"}}"
+                        },
+                        "description": "This endpoint allows you to edit a Cost Estimation Position."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Search CeanX Calculation Positions.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimation_positions\/search",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimation_positions\/search"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"text\":\"qui\"}"
+                        },
+                        "description": "This endpoint allows you to search for a String in all\nstored CeanX Cost Estimation Positions."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get a specific Cost Estimation Position.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimation_positions\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimation_positions\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "veritatis",
+                                    "description": "The ID of the cost estimation position."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to get a specific Cost Estimation Position."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete a Cost Estimation Position.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimation_positions\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimation_positions\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "tempore",
+                                    "description": "The ID of the cost estimation position."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to delete a Cost Estimation Position."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Rename Component of Cost Estimation Positions.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cost_estimation_positions\/rename_component",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cost_estimation_positions\/rename_component"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"object\":{\"old_name\":\"provident\",\"new_name\":\"quia\"}}"
+                        },
+                        "description": "This endpoint allows you to edit a Cost Estimation Position."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Jira Connections",
+            "description": "\nEndpoints for handling Jira Connection Requests.",
+            "item": [
+                {
+                    "name": "Test a Jira Connection.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/jira_connections\/test",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/jira_connections\/test"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"jiraConnection\":{\"host\":\"ea\",\"email\":\"dickens.jules@example.com\",\"api_token\":\"ratione\"}}"
+                        },
+                        "description": "This endpoint allows you to add new Troi Connection."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create a new Jira Connection.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/jira_connections\/new",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/jira_connections\/new"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"jiraConnection\":{\"title\":\"sint\",\"description\":\"Nesciunt commodi inventore pariatur deleniti molestiae.\",\"host\":\"quam\",\"email\":\"katrine82@example.org\",\"api_token\":\"eos\"}}"
+                        },
+                        "description": "This endpoint allows you to add new Troi Connection."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Jira Connections.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/jira_connections\/all",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/jira_connections\/all"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you retrieve all stored Jira Conenctions."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get a specific Jira Connections.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/jira_connections\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/jira_connections\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the jira connection."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you retrieve a specific Jira Conenction."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete a Jira Connection.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/jira_connections\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/jira_connections\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the jira connection."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to delete a Jira Connection."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Search Jira Calculation Positions.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/jira_connections\/search",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/jira_connections\/search"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"text\":\"fuga\",\"components\":[\"at\"]}"
+                        },
+                        "description": "This endpoint allows you to search for a String in all\nstored Jira Connections."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Settings",
+            "description": "\nEndpoints for handling Settings Requests.",
+            "item": [
+                {
+                    "name": "Toggle Registration.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/setting\/toggle_registration",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/setting\/toggle_registration"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to disable and enable the Registration-feature."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Registration Feature Stauts.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/setting\/register_allowed",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/setting\/register_allowed"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to see if the Registration-feature is enabled.\nIf returns 0, the feature is disabled. If returns 1, the feature is enabled.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-type",
+                                    "value": "text\/html; charset=UTF-8"
+                                },
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "0",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Troi Connections",
+            "description": "\nEndpoints for handling Troi Connection Requests.",
+            "item": [
+                {
+                    "name": "Test a Troi Connection.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/troi_connections\/test",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/troi_connections\/test"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"troiConnection\":{\"host\":\"labore\",\"username\":\"dolorum\",\"password\":\"?Arhv}'+m_l|uP57s\"}}"
+                        },
+                        "description": "This endpoint allows you to test a Troi Connection."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create a new Troi Connection.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/troi_connections\/new",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/troi_connections\/new"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"troiConnection\":{\"title\":\"hic\",\"description\":\"Illum ut optio autem quia nemo.\",\"host\":\"nam\",\"username\":\"vel\",\"password\":\",>QS)cRGAh\"}}"
+                        },
+                        "description": "This endpoint allows you to add new Troi Connection."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Troi Connections.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/troi_connections\/all",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/troi_connections\/all"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you retrieve all stored Troi Conenctions."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get a specific Troi Connection.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/troi_connections\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/troi_connections\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the troi connection."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows retrieve a specific Troi Connection."
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete a Troi Connection.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/troi_connections\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/troi_connections\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the troi connection."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to delete a Troi Connection."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Search Troi Calculation Positions.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/troi_connections\/search",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/troi_connections\/search"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"text\":\"vel\"}"
+                        },
+                        "description": "This endpoint allows you to search for a String in all\nstored Troi Connections."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "User",
+            "description": "\nEndpoints for handling User Requests.",
+            "item": [
+                {
+                    "name": "GET api\/users\/latest",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/latest",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/latest"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "apikey",
+        "apikey": [
+            {
+                "key": "in",
+                "value": "header",
+                "type": "string"
+            },
+            {
+                "key": "key",
+                "value": "X-CSRF-TOKEN",
+                "type": "string"
+            }
+        ]
+    }
+}

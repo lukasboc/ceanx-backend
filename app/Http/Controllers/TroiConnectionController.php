@@ -7,9 +7,25 @@ use App\Models\TroiConnection;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-
+/**
+ * @group Troi Connections
+ *
+ * Endpoints for handling Troi Connection Requests.
+ * @authenticated
+ */
 class TroiConnectionController extends Controller
 {
+    /**
+     * Create a new Troi Connection.
+     *
+     * This endpoint allows you to add new Troi Connection.
+     * @bodyParam troiConnection object required Connection
+     * @bodyParam troiConnection.title string required Title
+     * @bodyParam troiConnection.description string Description
+     * @bodyParam troiConnection.host string required Host
+     * @bodyParam troiConnection.username string required Username
+     * @bodyParam troiConnection.password string required Password
+     */
     public function createNewTroiConnection(Request $request)
     {
         $inputs = $request->input();
@@ -27,6 +43,15 @@ class TroiConnectionController extends Controller
         return $tc->makeHidden('password');
     }
 
+    /**
+     * Test a Troi Connection.
+     *
+     * This endpoint allows you to test a Troi Connection.
+     * @bodyParam troiConnection object required Connection
+     * @bodyParam troiConnection.host string required Host
+     * @bodyParam troiConnection.username string required Username
+     * @bodyParam troiConnection.password string required Password
+     */
     public function testTroiConnection(Request $request)
     {
         $inputs = $request->input();
@@ -42,16 +67,33 @@ class TroiConnectionController extends Controller
         return $response;
     }
 
+    /**
+     * Get all Troi Connections.
+     *
+     * This endpoint allows you retrieve all stored Troi Conenctions.
+     */
     public function getTroiConnections(Request $request)
     {
         return TroiConnection::orderByDesc('updated_at')->get()->makeHidden('password');
     }
 
+    /**
+     * Get a specific Troi Connection.
+     *
+     * This endpoint allows retrieve a specific Troi Connection.
+     */
     public function getTroiConnectionById($id): \Illuminate\Http\JsonResponse
     {
         return response()->json(TroiConnection::with('user:id,name')->find($id)->makeHidden('password'));
     }
 
+    /**
+     * Search Troi Calculation Positions.
+     *
+     * This endpoint allows you to search for a String in all
+     * stored Troi Connections.
+     * @bodyParam text string required Search String
+     */
     public function getSearchResult(Request $request)
     {
         $inputs = $request->input();
@@ -85,6 +127,11 @@ class TroiConnectionController extends Controller
         return $result;
     }
 
+    /**
+     * Delete a Troi Connection.
+     *
+     * This endpoint allows you to delete a Troi Connection.
+     */
     public function deleteConnection($id): \Illuminate\Http\JsonResponse
     {
         $con = TroiConnection::find($id);

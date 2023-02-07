@@ -8,9 +8,25 @@ use App\Models\Project;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-
+/**
+ * @group Jira Connections
+ *
+ * Endpoints for handling Jira Connection Requests.
+ * @authenticated
+ */
 class JiraConnectionController extends Controller
 {
+    /**
+     * Create a new Jira Connection.
+     *
+     * This endpoint allows you to add new Troi Connection.
+     * @bodyParam jiraConnection object required
+     * @bodyParam jiraConnection.title string required Title
+     * @bodyParam jiraConnection.description string Description
+     * @bodyParam jiraConnection.host string required Host
+     * @bodyParam jiraConnection.email string required E-Mail
+     * @bodyParam jiraConnection.api_token string required API Token
+     */
     public function createNewJiraConnection(Request $request)
     {
         $inputs = $request->input();
@@ -28,6 +44,15 @@ class JiraConnectionController extends Controller
         return $jc->makeHidden('api_token');
     }
 
+    /**
+     * Test a Jira Connection.
+     *
+     * This endpoint allows you to add new Troi Connection.
+     * @bodyParam jiraConnection object required Connection
+     * @bodyParam jiraConnection.host string required Host
+     * @bodyParam jiraConnection.email string required E-Mail
+     * @bodyParam jiraConnection.api_token string required API Token
+     */
     public function testJiraConnection(Request $request)
     {
         $inputs = $request->input();
@@ -45,16 +70,34 @@ class JiraConnectionController extends Controller
         return $response;
     }
 
+    /**
+     * Get all Jira Connections.
+     *
+     * This endpoint allows you retrieve all stored Jira Conenctions.
+     */
     public function getJiraConnections(Request $request)
     {
         return JiraConnection::orderByDesc('updated_at')->get()->makeHidden('api_token');
     }
 
+    /**
+     * Get a specific Jira Connections.
+     *
+     * This endpoint allows you retrieve a specific Jira Conenction.
+     */
     public function getJiraConnectionById($id): \Illuminate\Http\JsonResponse
     {
         return response()->json(JiraConnection::with('user:id,name')->find($id)->makeHidden('api_token'));
     }
 
+    /**
+     * Search Jira Calculation Positions.
+     *
+     * This endpoint allows you to search for a String in all
+     * stored Jira Connections.
+     * @bodyParam text string Search String
+     * @bodyParam components string[] Components
+     */
     public function getSearchResult(Request $request)
     {
         $inputs = $request->input();
@@ -113,6 +156,11 @@ class JiraConnectionController extends Controller
         return $result;
     }
 
+    /**
+     * Delete a Jira Connection.
+     *
+     * This endpoint allows you to delete a Jira Connection.
+     */
     public function deleteConnection($id): \Illuminate\Http\JsonResponse
     {
         $con = JiraConnection::find($id);
