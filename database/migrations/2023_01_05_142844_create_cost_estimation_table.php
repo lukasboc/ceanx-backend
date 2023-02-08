@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->decimal('unit_rate')->nullable();
+            $table->decimal('unit_rate', 18)->nullable();
             $table->string('unit')->nullable();
             $table->foreignId('user_id')->nullable()->constrained('users')
                 ->onDelete('set null');
