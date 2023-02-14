@@ -105,7 +105,14 @@ class JiraConnectionController extends Controller
         $text = $inputs['text'];
         $components = $inputs['components'];
 
-        $jql = 'timespent != null AND ';
+        $jiraConnections = JiraConnection::orderByDesc('updated_at')->get();
+        $result = array();
+
+        /*
+         * TimeSpent Epics (aggregated timespent)
+         */
+
+        $jql = 'timespent = null AND ';
         if($text !== '' && $text !== null){
             $jql .= 'text ~ "' . $text . '"';
             if(sizeof($components) !== 0){
@@ -135,9 +142,58 @@ class JiraConnectionController extends Controller
             return response()->json('Ohne Eingabe, keine Ergebnisse.',400);
         }
 
-        $jiraConnections = JiraConnection::orderByDesc('updated_at')->get();
+        foreach ($jiraConnections as $jiraConnection) {
+            $response = Http::withHeaders([
+                'Authorization' => 'Basic ' . base64_encode($jiraConnection->email . ':' . $jiraConnection->api_token),
+                'Content-Type' => 'application/json',
+                'X-Atlassian-Token' => 'no-check',
+            ])->get($jiraConnection->host. '/rest/api/2/search',[
+                'jql' => $jql,
+                'fields' => 'timespent,issueType,project,updated,status,assignee,progress,summary,aggregatetimespent'
+            ]);
+            $json = $response->json();
 
-        $result = array();
+            foreach ($json['issues'] as $searchResult) {
+                if($searchResult['fields']['aggregatetimespent'] !== null){
+                    $searchResult['fields']['summary'] = $searchResult['fields']['summary'] . ' (Zeit Aggregiert aus Subtasks)';
+                    $searchResult['fields']['timespent'] = $searchResult['fields']['aggregatetimespent'];
+                    $result[] = $searchResult;
+                }
+            }
+        }
+
+        /*
+         * TimeSpent Tickets
+         */
+
+        $jql = 'timespent != null AND ';
+        if($text !== '' && $text !== null){
+            $jql .= 'text ~ "' . $text . '"';
+            if(sizeof($components) !== 0){
+                $jql .= ' AND component = "' . $components[0] . '"';
+                $count = 0;
+                if(sizeof($components) > 0){
+                    foreach ($components as $component){
+                        if($count === 0) continue;
+                        $jql .= ' OR ';
+                        $jql .= $component;
+                        $count++;
+                    }
+                }
+            }
+        } elseif (sizeof($components) !== 0){
+            $jql .= 'component = "' . $components[0] . '"';
+            $count = 0;
+            if(sizeof($components) > 0){
+                foreach ($components as $component){
+                    if($count === 0) continue;
+                    $jql .= ' OR ';
+                    $jql .= $component;
+                    $count++;
+                }
+            }
+        }
+
         foreach ($jiraConnections as $jiraConnection) {
             $response = Http::withHeaders([
                 'Authorization' => 'Basic ' . base64_encode($jiraConnection->email . ':' . $jiraConnection->api_token),
