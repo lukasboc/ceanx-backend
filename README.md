@@ -13,6 +13,9 @@ Dieses Repository enthält den Quellcode der Backend-Anwendung von CeanX.
 - ggf. der `/config/cors.php` die URL des lokalen Frontends zu `allowed_origins` hinzufügen.
 - Über `php artisan serve` Backend starten
 
+Die `.env.example` enthält Beispiele für den lokalen und produktiven Betrieb des Backends in Verbindung mit dem [CeanX Frontend](https://github.com/lukasboc/ceanx-frontend).
+
+
 ## Projekt Setup Production
 
 - .env aus .env.example erstellen
