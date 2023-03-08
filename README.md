@@ -4,7 +4,7 @@
 
 Dieses Repository enthält den Quellcode der Backend-Anwendung von CeanX.
 
-## Projekt Setup Lokal
+## Lokales Setup
 
 - .env aus .env.example erstellen
 - Dependencies mit `composer install` installieren
@@ -16,7 +16,7 @@ Dieses Repository enthält den Quellcode der Backend-Anwendung von CeanX.
 Die `.env.example` enthält Beispiele für den lokalen und produktiven Betrieb des Backends in Verbindung mit dem [CeanX Frontend](https://github.com/lukasboc/ceanx-frontend).
 
 
-## Projekt Setup Production
+## Produktives Setup
 
 - .env aus .env.example erstellen
 - Hinweis zur Erstellung der .env: `SANCTUM_STATEFUL_DOMAINS` und `SESSION_DOMAIN` auf die Domain des Frontends zeigen. (ohne http und www)
@@ -26,11 +26,7 @@ Die `.env.example` enthält Beispiele für den lokalen und produktiven Betrieb d
 - In der `/config/cors.php` die URL des Frontends zu `allowed_origins` hinzufügen.
 - Das Backend z.B. über FTP auf Webspace deployen. Weitere Möglichkeiten zum Deployment können der [Laravel Dokumentation](https://laravel.com/docs) entnommen werden. Zu bedachten ist insbesondere, dass den DocumentRoot auf das public-Verzeichnis zu setzen.
 
-Achtung: damit die Authentifizierung zwischen Frontend und Backend funktioniert, muss die [Laravel Sanctum Dokumentation](https://laravel.com/docs/9.x/sanctum#spa-authentication) bei der Wahl der Domains/Subdomains beachtet werden:
+Achtung: Damit die Authentifizierung zwischen Frontend und Backend funktioniert, muss die [Laravel Sanctum Dokumentation](https://laravel.com/docs/9.x/sanctum#spa-authentication) bei der Wahl der Domains/Subdomains beachtet werden.
 
-(TLDR): Deployment unter derselben Domain / Subdomain. Das Backend darf unter `backend.[FRONTEND_URL]` deployed werden.
-Fehler kommen zustande, wenn z.B. das Frontend unter ceanx.example.de und das Backend unter ceanx.backend.example.de geployed wird.
-
-## Laravel License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+TLDR: Das Deployment muss unter derselben Domain / Subdomain stattfinden. Das Backend kann unter `backend.[FRONTEND_DOMAIN]` deployed werden.
+Fehler kommen zustande, wenn z.B. das Frontend unter ceanx.example.de und das Backend unter ceanx.backend.example.de geployed werden.
