@@ -91,7 +91,7 @@ class JiraConnectionController extends Controller
     }
 
     /**
-     * Search Jira Calculation Positions.
+     * Search Jira Worklogs.
      *
      * This endpoint allows you to search for a String in all
      * stored Jira Connections.
