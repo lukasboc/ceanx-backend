@@ -155,7 +155,7 @@ class JiraConnectionController extends Controller
 
             foreach ($json['issues'] as $searchResult) {
                 if($searchResult['fields']['aggregatetimespent'] !== null){
-                    $searchResult['fields']['summary'] = $searchResult['fields']['summary'] . ' (Zeit Aggregiert aus Subtasks)';
+                    $searchResult['fields']['summary'] = $searchResult['fields']['summary'] . ' (Zeit aggregiert aus Subtasks)';
                     $searchResult['fields']['timespent'] = $searchResult['fields']['aggregatetimespent'];
                     $result[] = $searchResult;
                 }
